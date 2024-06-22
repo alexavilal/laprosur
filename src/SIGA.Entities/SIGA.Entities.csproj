@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF3805B2-EDA2-4F7F-AF21-620D6D54861C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIGA.Entities</RootNamespace>
+    <AssemblyName>SIGA.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comunes\Base.cs" />
+    <Compile Include="Comunes\ErrorServicioDtoResponse.cs" />
+    <Compile Include="Comunes\Pagina.cs" />
+    <Compile Include="Comunes\ParametroDtoResponse.cs" />
+    <Compile Include="Comunes\TipoErrorServicioDtoResponse.cs" />
+    <Compile Include="Logistica\Almacen.cs" />
+    <Compile Include="Logistica\DetalleDocumentoIngreso.cs" />
+    <Compile Include="Logistica\DetalleDocumentoProveedor.cs" />
+    <Compile Include="Logistica\DocumentoNoVenta.cs" />
+    <Compile Include="Logistica\DocumentoProveedor.cs" />
+    <Compile Include="Logistica\Familia.cs" />
+    <Compile Include="Logistica\General.cs" />
+    <Compile Include="Logistica\Marca.cs" />
+    <Compile Include="Logistica\Operador.cs" />
+    <Compile Include="Logistica\Proveedor.cs" />
+    <Compile Include="Logistica\ProveedorContacto.cs" />
+    <Compile Include="Logistica\ProveedorMarca.cs" />
+    <Compile Include="Logistica\Requerimiento.cs" />
+    <Compile Include="Logistica\RequerimientoDetalle.cs" />
+    <Compile Include="Logistica\Sede.cs" />
+    <Compile Include="Logistica\TipoDocumento.cs" />
+    <Compile Include="Logistica\TipoDocumentoIdentificacion.cs" />
+    <Compile Include="Logistica\UnidadMedida.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Administrador\Cargo.cs" />
+    <Compile Include="Administrador\Empleado.cs" />
+    <Compile Include="Administrador\Modulo.cs" />
+    <Compile Include="Administrador\Opcion.cs" />
+    <Compile Include="Administrador\OpcionPerfil.cs" />
+    <Compile Include="Administrador\Perfil.cs" />
+    <Compile Include="Administrador\PerfilUsuario.cs" />
+    <Compile Include="Administrador\Usuario.cs" />
+    <Compile Include="Administrador\UsuarioLogin.cs" />
+    <Compile Include="Seguridad\Perfil.cs" />
+    <Compile Include="Seguridad\PerfilUsuario.cs" />
+    <Compile Include="Seguridad\Usuario.cs" />
+    <Compile Include="Seguridad\UsuarioLogin.cs" />
+    <Compile Include="Ventas\ClienteContacto.cs" />
+    <Compile Include="Ventas\ClientePlaca.cs" />
+    <Compile Include="Ventas\ClienteRequest.cs" />
+    <Compile Include="Ventas\ClienteResponse.cs" />
+    <Compile Include="Ventas\Cotizacion.cs" />
+    <Compile Include="Ventas\CotizacionDetalle.cs" />
+    <Compile Include="Ventas\FormaPago.cs" />
+    <Compile Include="Ventas\Guia.cs" />
+    <Compile Include="Ventas\GuiaDetalle.cs" />
+    <Compile Include="Ventas\PoliticaPrecio.cs" />
+    <Compile Include="Ventas\Precio.cs" />
+    <Compile Include="Ventas\Transportista.cs" />
+    <Compile Include="Ventas\TransportistaPlaca.cs" />
+    <Compile Include="Ventas\Zona.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

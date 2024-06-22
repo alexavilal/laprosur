@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1BA15777-3D54-48DE-B520-EDD788413B7F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIGA.Business</RootNamespace>
+    <AssemblyName>SIGA.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrador\CargoBusiness.cs" />
+    <Compile Include="Administrador\ModuloBusiness.cs" />
+    <Compile Include="Administrador\OpcionBusiness.cs" />
+    <Compile Include="Administrador\PerfilBusiness.cs" />
+    <Compile Include="Administrador\UsuarioBusiness.cs" />
+    <Compile Include="Comunes\ParametroBusiness.cs" />
+    <Compile Include="Comunes\ParametroFEBusiness.cs" />
+    <Compile Include="Comunes\StockBusiness.cs" />
+    <Compile Include="Logistica\AlmacenBusiness.cs" />
+    <Compile Include="Logistica\DocumentoProveedorBusiness.cs" />
+    <Compile Include="Logistica\FamiliaBusiness.cs" />
+    <Compile Include="Logistica\GeneralBusiness.cs" />
+    <Compile Include="Logistica\MarcaBusiness.cs" />
+    <Compile Include="Logistica\OperadorBusiness.cs" />
+    <Compile Include="Logistica\ProveedorBusiness.cs" />
+    <Compile Include="Logistica\RequerimientoBusiness.cs" />
+    <Compile Include="Logistica\SedeBusiness.cs" />
+    <Compile Include="Logistica\TipoDocumentoBusiness.cs" />
+    <Compile Include="Logistica\TipoDocumentoIdentidadBusiness.cs" />
+    <Compile Include="Logistica\UnidadMedidaBusiness.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\UsuarioBusiness.cs" />
+    <Compile Include="Ventas\FleteBusiness.cs" />
+    <Compile Include="Ventas\FormaPagoBusiness.cs" />
+    <Compile Include="Ventas\GuiaBusiness.cs" />
+    <Compile Include="Ventas\ClienteBusiness.cs" />
+    <Compile Include="Ventas\ClienteContactoBusiness.cs" />
+    <Compile Include="Ventas\CotizacionBusiness.cs" />
+    <Compile Include="Ventas\PoliticaPrecioBusiness.cs" />
+    <Compile Include="Ventas\PrecioBusiness.cs" />
+    <Compile Include="Ventas\TransportistaBusiness.cs" />
+    <Compile Include="Ventas\ZonaBusiness.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIGA.Comun\SIGA.Comun.csproj">
+      <Project>{0D1D2BBE-FE0F-472A-8A3F-D950EC228BA8}</Project>
+      <Name>SIGA.Comun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIGA.DAO\SIGA.Dao.csproj">
+      <Project>{B7ADBEC1-C0AE-4D4A-AFF9-5B424F29CC9F}</Project>
+      <Name>SIGA.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIGA.Entities\SIGA.Entities.csproj">
+      <Project>{DF3805B2-EDA2-4F7F-AF21-620D6D54861C}</Project>
+      <Name>SIGA.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

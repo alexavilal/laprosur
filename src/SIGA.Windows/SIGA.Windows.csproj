@@ -1,0 +1,663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BC60DD6D-7281-4E87-BBF6-20D5914BB8E3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIGA.Windows</RootNamespace>
+    <AssemblyName>SIGA.Windows</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SIGA.Windows.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net45\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Librerias\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrador\FrmMantenimientoModulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\FrmMantenimientoModulo.designer.cs">
+      <DependentUpon>FrmMantenimientoModulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\FrmMantenimientoOpciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\FrmMantenimientoOpciones.designer.cs">
+      <DependentUpon>FrmMantenimientoOpciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\FrmMantenimientoPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\FrmMantenimientoPerfil.designer.cs">
+      <DependentUpon>FrmMantenimientoPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\FrmMantenimientoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\FrmMantenimientoUsuario.Designer.cs">
+      <DependentUpon>FrmMantenimientoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\FrmRegistroModulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\FrmRegistroModulo.designer.cs">
+      <DependentUpon>FrmRegistroModulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\FrmRegistroOpciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\FrmRegistroOpciones.Designer.cs">
+      <DependentUpon>FrmRegistroOpciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\FrmRegistroPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\FrmRegistroPerfil.Designer.cs">
+      <DependentUpon>FrmRegistroPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\frmRegistroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmRegistroUsuario.Designer.cs">
+      <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comunes\frmClienteBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comunes\frmClienteBuscar.Designer.cs">
+      <DependentUpon>frmClienteBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comunes\frmImpresion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comunes\frmImpresion.Designer.cs">
+      <DependentUpon>frmImpresion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comunes\frmProductoBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comunes\frmProductoBuscar.Designer.cs">
+      <DependentUpon>frmProductoBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dbLaProSurDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbLaProSurDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbLaProSurDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbLaProSurDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\frmBuscaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\frmBuscaProveedor.Designer.cs">
+      <DependentUpon>frmBuscaProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmConsultarDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmConsultarDocumentos.Designer.cs">
+      <DependentUpon>frmConsultarDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoAlmacen.designer.cs">
+      <DependentUpon>frmMantenimientoAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoFamilia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoFamilia.designer.cs">
+      <DependentUpon>frmMantenimientoFamilia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoOtrosIngresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoOtrosIngresos.Designer.cs">
+      <DependentUpon>frmMantenimientoOtrosIngresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoProveedor.designer.cs">
+      <DependentUpon>frmMantenimientoProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoSede.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoSede.designer.cs">
+      <DependentUpon>frmMantenimientoSede.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroAlmacen.designer.cs">
+      <DependentUpon>frmRegistroAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroFamilia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroFamilia.Designer.cs">
+      <DependentUpon>frmRegistroFamilia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroProveedor.Designer.cs">
+      <DependentUpon>frmRegistroProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroRequerimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroRequerimiento.Designer.cs">
+      <DependentUpon>frmRegistroRequerimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroSede.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroSede.designer.cs">
+      <DependentUpon>frmRegistroSede.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmMantenimientoOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmMantenimientoOrdenCompra.Designer.cs">
+      <DependentUpon>frmMantenimientoOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmMantenimientoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmMantenimientoProducto.Designer.cs">
+      <DependentUpon>frmMantenimientoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmMantenimientoRequerimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmMantenimientoRequerimiento.Designer.cs">
+      <DependentUpon>frmMantenimientoRequerimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmRegistroOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmRegistroOC.Designer.cs">
+      <DependentUpon>frmRegistroOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmRegProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmRegProducto.Designer.cs">
+      <DependentUpon>frmRegProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmRequerimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmRequerimiento.Designer.cs">
+      <DependentUpon>frmRequerimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Operaciones\frmRegistrarIngresoOtros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\Operaciones\frmRegistrarIngresoOtros.Designer.cs">
+      <DependentUpon>frmRegistrarIngresoOtros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDISIGA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDISIGA.Designer.cs">
+      <DependentUpon>MDISIGA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioLogeo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ventas\Formularios\frmAnularGuia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmAnularGuia.Designer.cs">
+      <DependentUpon>frmAnularGuia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmBuscarVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmBuscarVehiculo.Designer.cs">
+      <DependentUpon>frmBuscarVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmFletes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmFletes.Designer.cs">
+      <DependentUpon>frmFletes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmGuia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmGuia.Designer.cs">
+      <DependentUpon>frmGuia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmMantenimientoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmMantenimientoCliente.Designer.cs">
+      <DependentUpon>frmMantenimientoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmMantenimientoCotizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmMantenimientoCotizaciones.Designer.cs">
+      <DependentUpon>frmMantenimientoCotizaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmMantenimientoGuia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmMantenimientoGuia.Designer.cs">
+      <DependentUpon>frmMantenimientoGuia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmMantenimientoPolitica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmMantenimientoPolitica.Designer.cs">
+      <DependentUpon>frmMantenimientoPolitica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmMantenimientoPrecios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmMantenimientoPrecios.Designer.cs">
+      <DependentUpon>frmMantenimientoPrecios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmMantenimientoTransportista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmMantenimientoTransportista.Designer.cs">
+      <DependentUpon>frmMantenimientoTransportista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmMantenimientoZona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmMantenimientoZona.Designer.cs">
+      <DependentUpon>frmMantenimientoZona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmProforma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmProforma.Designer.cs">
+      <DependentUpon>frmProforma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmRegistroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmRegistroCliente.Designer.cs">
+      <DependentUpon>frmRegistroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmRegistroPolitica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmRegistroPolitica.Designer.cs">
+      <DependentUpon>frmRegistroPolitica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmRegistroTransportista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmRegistroTransportista.Designer.cs">
+      <DependentUpon>frmRegistroTransportista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmRegistroZona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmRegistroZona.Designer.cs">
+      <DependentUpon>frmRegistroZona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmVentasporFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Formularios\frmVentasporFecha.Designer.cs">
+      <DependentUpon>frmVentasporFecha.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Comunes\frmClienteBuscar.resx">
+      <DependentUpon>frmClienteBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comunes\frmImpresion.resx">
+      <DependentUpon>frmImpresion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comunes\frmProductoBuscar.resx">
+      <DependentUpon>frmProductoBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\Busquedas\frmBuscaProveedor.resx">
+      <DependentUpon>frmBuscaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\Busquedas\Mantenimientos\frmConsultarDocumentos.resx">
+      <DependentUpon>frmConsultarDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoAlmacen.resx">
+      <DependentUpon>frmMantenimientoAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoOtrosIngresos.resx">
+      <DependentUpon>frmMantenimientoOtrosIngresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoProveedor.resx">
+      <DependentUpon>frmMantenimientoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoSede.resx">
+      <DependentUpon>frmMantenimientoSede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroAlmacen.resx">
+      <DependentUpon>frmRegistroAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroProveedor.resx">
+      <DependentUpon>frmRegistroProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroRequerimiento.resx">
+      <DependentUpon>frmRegistroRequerimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroSede.resx">
+      <DependentUpon>frmRegistroSede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\frmMantenimientoOrdenCompra.resx">
+      <DependentUpon>frmMantenimientoOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\frmMantenimientoProducto.resx">
+      <DependentUpon>frmMantenimientoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\frmMantenimientoRequerimiento.resx">
+      <DependentUpon>frmMantenimientoRequerimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\frmRegistroOC.resx">
+      <DependentUpon>frmRegistroOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\frmRegProducto.resx">
+      <DependentUpon>frmRegProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\frmRequerimiento.resx">
+      <DependentUpon>frmRequerimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\Operaciones\frmRegistrarIngresoOtros.resx">
+      <DependentUpon>frmRegistrarIngresoOtros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ControlInterno.rdlc" />
+    <EmbeddedResource Include="Reportes\rptControlInterno.rdlc" />
+    <EmbeddedResource Include="Reportes\rptFlete.rdlc" />
+    <EmbeddedResource Include="Ventas\Formularios\frmAnularGuia.resx">
+      <DependentUpon>frmAnularGuia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmBuscarVehiculo.resx">
+      <DependentUpon>frmBuscarVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmFletes.resx">
+      <DependentUpon>frmFletes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmGuia.resx">
+      <DependentUpon>frmGuia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmMantenimientoCliente.resx">
+      <DependentUpon>frmMantenimientoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmMantenimientoCotizaciones.resx">
+      <DependentUpon>frmMantenimientoCotizaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmMantenimientoGuia.resx">
+      <DependentUpon>frmMantenimientoGuia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmMantenimientoPolitica.resx">
+      <DependentUpon>frmMantenimientoPolitica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmMantenimientoPrecios.resx">
+      <DependentUpon>frmMantenimientoPrecios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmMantenimientoTransportista.resx">
+      <DependentUpon>frmMantenimientoTransportista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmMantenimientoZona.resx">
+      <DependentUpon>frmMantenimientoZona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmProforma.resx">
+      <DependentUpon>frmProforma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmRegistroCliente.resx">
+      <DependentUpon>frmRegistroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmRegistroPolitica.resx">
+      <DependentUpon>frmRegistroPolitica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmRegistroTransportista.resx">
+      <DependentUpon>frmRegistroTransportista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmRegistroZona.resx">
+      <DependentUpon>frmRegistroZona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Formularios\frmVentasporFecha.resx">
+      <DependentUpon>frmVentasporFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbLaProSurDataSet.xsc">
+      <DependentUpon>dbLaProSurDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbLaProSurDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbLaProSurDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbLaProSurDataSet.xss">
+      <DependentUpon>dbLaProSurDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbLaProSurDataSet1.xsc">
+      <DependentUpon>dbLaProSurDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbLaProSurDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbLaProSurDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbLaProSurDataSet1.xss">
+      <DependentUpon>dbLaProSurDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Resources\Dibujo.jpg" />
+    <EmbeddedResource Include="Administrador\FrmMantenimientoModulo.resx">
+      <DependentUpon>FrmMantenimientoModulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\FrmMantenimientoOpciones.resx">
+      <DependentUpon>FrmMantenimientoOpciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\FrmMantenimientoPerfil.resx">
+      <DependentUpon>FrmMantenimientoPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\FrmMantenimientoUsuario.resx">
+      <DependentUpon>FrmMantenimientoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\FrmRegistroModulo.resx">
+      <DependentUpon>FrmRegistroModulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\FrmRegistroOpciones.resx">
+      <DependentUpon>FrmRegistroOpciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\FrmRegistroPerfil.resx">
+      <DependentUpon>FrmRegistroPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\frmRegistroUsuario.resx">
+      <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\Busquedas\Mantenimientos\frmMantenimientoFamilia.resx">
+      <DependentUpon>frmMantenimientoFamilia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroFamilia.resx">
+      <DependentUpon>frmRegistroFamilia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDISIGA.resx">
+      <DependentUpon>MDISIGA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Content Include="Imagenes\Logo.jpeg" />
+    <Content Include="Librerias\Newtonsoft.Json.dll" />
+    <Content Include="Librerias\Nissi.nFact.dll" />
+    <Content Include="Properties\Web.config" />
+    <Content Include="Properties\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Properties\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nissi.nFact\Nissi.nFact.csproj">
+      <Project>{18b92fc3-a85f-44dd-961d-9d5bc6db7418}</Project>
+      <Name>Nissi.nFact</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIGA.Business\SIGA.Business.csproj">
+      <Project>{1BA15777-3D54-48DE-B520-EDD788413B7F}</Project>
+      <Name>SIGA.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIGA.Comun\SIGA.Comun.csproj">
+      <Project>{0D1D2BBE-FE0F-472A-8A3F-D950EC228BA8}</Project>
+      <Name>SIGA.Comun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIGA.Entities\SIGA.Entities.csproj">
+      <Project>{DF3805B2-EDA2-4F7F-AF21-620D6D54861C}</Project>
+      <Name>SIGA.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Caja\" />
+    <Folder Include="DataTable\" />
+    <Folder Include="Logistica\Formularios\Reportes\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

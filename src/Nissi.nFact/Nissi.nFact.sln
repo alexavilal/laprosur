@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nissi.nFact", "Nissi.nFact.csproj", "{18B92FC3-A85F-44DD-961D-9D5BC6DB7418}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2FE74CC3-75A7-48E9-9A5F-D920FA25C085}"
+	ProjectSection(SolutionItems) = preProject
+		Sistema.cs = Sistema.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18B92FC3-A85F-44DD-961D-9D5BC6DB7418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18B92FC3-A85F-44DD-961D-9D5BC6DB7418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18B92FC3-A85F-44DD-961D-9D5BC6DB7418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18B92FC3-A85F-44DD-961D-9D5BC6DB7418}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12858118-67DF-4E36-9BDC-A69678A78877}
+	EndGlobalSection
+EndGlobal
