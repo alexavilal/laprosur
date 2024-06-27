@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.DAO.Comunes;
-using System.Data;
+﻿using SIGA.DAO.Comunes;
 using SIGA.Entities.Logistica;
+using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace SIGA.DAO.Logistica
@@ -23,7 +21,7 @@ namespace SIGA.DAO.Logistica
                 using (SqlCommand cmd = new SqlCommand("USP_LISTAR_TIPODOCUMENTOIDENTIFICACION", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    
+
                     con.Open();
 
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -40,6 +38,6 @@ namespace SIGA.DAO.Logistica
             }
 
             return listResult;
-        } 
+        }
     }
 }

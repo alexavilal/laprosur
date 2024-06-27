@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using SIGA.Business.Logistica;
+﻿using SIGA.Business.Logistica;
 using SIGA.Entities.Logistica;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
 {
@@ -92,7 +87,7 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
                 Sede objEntidad = new Sede();
                 objEntidad.CodSede = CodigoEdicion;
                 objEntidad.DesSede = TxtDescripcion.Text;
-                objEntidad.DirSede =  TxtDireccion.Text ;
+                objEntidad.DirSede = TxtDireccion.Text;
                 objEntidad.EstCodigo = Convert.ToString(cboEstado.SelectedValue);
                 objEntidad.UsuMod = 1;  // por definir, dato de prueba
                 Codigo = objDocumentoBussiness.ActualizarSede(objEntidad);

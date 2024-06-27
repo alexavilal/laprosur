@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.Entities.Logistica;
-using SIGA.Comun.Dto;
-using System.Data.SqlClient;
-using System.Data.Common;
-using System.Data;
+﻿using SIGA.Comun.Dto;
 using SIGA.DAO.Comunes;
+using SIGA.Entities.Logistica;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Logistica
 {

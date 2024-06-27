@@ -4,19 +4,13 @@ using SIGA.Entities.Logistica;
 using SIGA.Entities.Ventas;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SIGA.Windows.Comunes
 {
     public partial class frmClienteBuscar : Form
     {
-        
+
         public string CodigoCliente { get; set; }
         public string NombreCliente { get; set; }
 
@@ -148,7 +142,7 @@ namespace SIGA.Windows.Comunes
         private void dgvCliente_CellDoubleClick(System.Object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
         {
 
-            
+
 
             try
             {

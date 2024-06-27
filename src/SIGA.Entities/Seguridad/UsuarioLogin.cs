@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 
@@ -17,7 +14,7 @@ namespace SIGA.Entities.Seguridad
         [StringLength(80, ErrorMessage = "Ingrese direccion de correo electrónico o Id.")]
         public string IdentificadorOrMail { get; set; }
 
-        [Required(ErrorMessage="Ingrese Password")]
+        [Required(ErrorMessage = "Ingrese Password")]
         [Display(Name = "Passowrd", Prompt = "Passowrd")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
@@ -45,7 +42,7 @@ namespace SIGA.Entities.Seguridad
         public Nullable<short> CodigoAplicativo { get; set; }
     }
 
-    public class PreguntaSponsorRequest 
+    public class PreguntaSponsorRequest
     {
         [Required]
         public IEnumerable<PreguntaSponsorResponse> PreguntaSponsor { get; set; }
@@ -56,12 +53,12 @@ namespace SIGA.Entities.Seguridad
 
     public class PreguntaSponsorResponse
     {
-	    public short CodigoPregunta {get; set;}
-	    public short CodigoSponsor {get; set;}
-	    public string DescripcionPregunta {get; set;}
-	    public string CodigoTipoPregunta {get; set;}
-	    public string DescripcionSponsor {get; set;}
-	    public string DescripcionTipoPregunta {get; set;}
+        public short CodigoPregunta { get; set; }
+        public short CodigoSponsor { get; set; }
+        public string DescripcionPregunta { get; set; }
+        public string CodigoTipoPregunta { get; set; }
+        public string DescripcionSponsor { get; set; }
+        public string DescripcionTipoPregunta { get; set; }
 
         [Required]
         [Display(Name = "Indique su respuesta")]
@@ -87,7 +84,7 @@ namespace SIGA.Entities.Seguridad
 
         [Required]
         [Display(Name = "Confirmar Respuesta")]
-    
+
         public string ConfirmaRespuesta { get; set; }
     }
 
@@ -98,7 +95,7 @@ namespace SIGA.Entities.Seguridad
 
         [Required]
         public int CodigoUsuario { get; set; }
-        
+
         [Required]
         [Display(Name = "Indique su respuesta")]
         [StringLength(100, ErrorMessage = "Su respuesta no debe exeder los 100 caracteres")]
@@ -125,7 +122,7 @@ namespace SIGA.Entities.Seguridad
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar password")]
-     
+
         public string ConfirmaClave { get; set; }
     }
 
@@ -143,7 +140,7 @@ namespace SIGA.Entities.Seguridad
 
     public class SeleccionIngreoRequest
     {
-        public short codAplicativo {get; set;}
+        public short codAplicativo { get; set; }
         public short codSponsor { get; set; }
     }
 

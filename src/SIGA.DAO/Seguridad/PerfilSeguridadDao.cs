@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using SIGA.DAO.Comunes;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using SIGA.DAO.Comunes;
 
 namespace SIGA.DAO.Seguridad
 {
@@ -22,13 +19,13 @@ namespace SIGA.DAO.Seguridad
 
             //string Connection = @"Data Source=192.168.0.4;Initial Catalog=SIGA;User id=sa;pwd=123456";
 
-           using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))
+            using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))
             {
                 using (SqlCommand cmd = new SqlCommand("USP_UsuarioPerfilConsultar", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@CodPerfil", SqlDbType.SmallInt).Value = Convert.ToInt16(CodigoPerfil);
-                   
+
                     con.Open();
 
 
@@ -49,7 +46,7 @@ namespace SIGA.DAO.Seguridad
             DataTable dt = new DataTable();
 
 
-         
+
             using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))
             {
                 using (SqlCommand cmd = new SqlCommand("USP_UsuarioPerfilConsultarDescripcion", con))

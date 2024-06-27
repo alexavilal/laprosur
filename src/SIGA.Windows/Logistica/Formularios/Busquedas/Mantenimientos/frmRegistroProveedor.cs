@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using SIGA.Business.Logistica;
+﻿using SIGA.Business.Logistica;
 using SIGA.Entities.Logistica;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
 {
@@ -57,22 +54,23 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
         }
 
 
-        private void ObtenerDatosProveedor() {
+        private void ObtenerDatosProveedor()
+        {
 
             ProveedorBusiness objBLProveedor = new ProveedorBusiness();
 
-            Proveedor objProveedor = new  Proveedor();
-            objProveedor.ProCodigo=CodigoProveedor;
+            Proveedor objProveedor = new Proveedor();
+            objProveedor.ProCodigo = CodigoProveedor;
 
             var consulta = objBLProveedor.ObtenerProveedor(objProveedor);
 
-            TxtCodigoGenerado.Text =Convert.ToString(consulta.ProCodigo);
+            TxtCodigoGenerado.Text = Convert.ToString(consulta.ProCodigo);
             txtRazonSocial.Text = Convert.ToString(consulta.ProRazonSocial);
             txtNombreComercial.Text = Convert.ToString(consulta.ProNombreComercial);
             txtPaginaWeb.Text = Convert.ToString(consulta.ProPaginaWeb);
             txtCorreoElectronico.Text = Convert.ToString(consulta.CorreoElectronico);
             txtDirecion.Text = consulta.Direccion;
-            dtpFecha.Text = Convert.ToString(consulta.FecAniProveedor) ;
+            dtpFecha.Text = Convert.ToString(consulta.FecAniProveedor);
 
             if (consulta.ProConMarca.Equals(1))
             {
@@ -85,14 +83,14 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
                 optSinMarca.Checked = true;
             }
 
-            cboTipoDocumento.SelectedValue =  consulta.CodTipoDocumento;
+            cboTipoDocumento.SelectedValue = consulta.CodTipoDocumento;
             txtNumero.Text = Convert.ToString(consulta.NumDocumento);
             cboEstado.SelectedValue = consulta.Estado;
 
             cargaBdListaMarcas();
             cargaBdListaContactos();
         }
-        
+
         private void cargaBdListaMarcas()
         {
             ProveedorBusiness objBLProveedor = new ProveedorBusiness();
@@ -116,7 +114,7 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
 
             ListaContactoGrid = ObtenerListaContactos;
 
-            dgvContactos.DataSource = ListaContactoGrid;        
+            dgvContactos.DataSource = ListaContactoGrid;
         }
 
         # region "CargaCombos"
@@ -129,7 +127,7 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
             Lista.Add(new TipoDocumentoIdentificacion { CodTipoDocumento = 0, DesDocumento = "Seleccione" });
 
             var consulta = objDocumentoBussiness.ListarTipoDocumentoIdentidad();
-            
+
             foreach (var item in consulta)
             {
                 Lista.Add(item);
@@ -155,7 +153,7 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
             cboEstado.ValueMember = "Key";
 
         }
-        void cargaComboMarcas() 
+        void cargaComboMarcas()
         {
             MarcaBusiness objMarcaBusiness = new MarcaBusiness();
 
@@ -172,7 +170,7 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
 
             cboMarca.DataSource = Lista;
             cboMarca.ValueMember = "CodMarca";
-            cboMarca.DisplayMember = "DesMarca";                    
+            cboMarca.DisplayMember = "DesMarca";
         }
         void CargarOperador()
         {
@@ -194,7 +192,7 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
             cboOperador.DisplayMember = "DesOperador";
         }
         #endregion
-         
+
 
         private void RegistrarProveedor()
         {
@@ -216,8 +214,8 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
                 objEntidadProveedor.ProConMarca = (optMarca.Checked) ? Convert.ToByte(1) : Convert.ToByte(0);
                 objEntidadProveedor.Direccion = txtDirecion.Text;
                 objEntidadProveedor.Estado = "A";
-                 
-                Codigo = objDocumentoBussiness.RegistrarProveedor(objEntidadProveedor,ListaMarcasGrid);
+
+                Codigo = objDocumentoBussiness.RegistrarProveedor(objEntidadProveedor, ListaMarcasGrid);
 
                 if (Codigo > 0)
                 {
@@ -231,24 +229,24 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
                 }
             }
             catch (Exception)
-            {                
-                throw new Exception ("Error, Consulte con el administrador");
+            {
+                throw new Exception("Error, Consulte con el administrador");
             }
 
         }
-        
+
         private void RegistrarContactoProveedor()
         {
             try
             {
                 int Codigo = 0;
                 ProveedorBusiness objDocumentoBussiness = new ProveedorBusiness();
-                
-                Codigo = objDocumentoBussiness.RegistrarProveedorContacto( ListaContactoGrid);
+
+                Codigo = objDocumentoBussiness.RegistrarProveedorContacto(ListaContactoGrid);
 
                 if (Codigo > 0)
                 {
-                    MessageBox.Show("Se grabaron los datos correctamente", "SIGA");                     
+                    MessageBox.Show("Se grabaron los datos correctamente", "SIGA");
                 }
                 else
                 {
@@ -280,10 +278,10 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
                 objEntidadProveedor.FecAniProveedor = Convert.ToDateTime(dtpFecha.Value);
                 objEntidadProveedor.UsuCreCodigo = UsuarioLogeo.Codigo;
                 objEntidadProveedor.FecCreacion = DateTime.Now;
-                objEntidadProveedor.ProConMarca = (optMarca.Checked) ? Convert.ToByte(1) : Convert.ToByte(0);             
-                objEntidadProveedor.Estado =Convert.ToString(cboEstado.SelectedValue);
+                objEntidadProveedor.ProConMarca = (optMarca.Checked) ? Convert.ToByte(1) : Convert.ToByte(0);
+                objEntidadProveedor.Estado = Convert.ToString(cboEstado.SelectedValue);
 
-                Codigo = objDocumentoBussiness.ActualizarProveedor(objEntidadProveedor, ListaMarcasGrid,ListaContactoGrid);
+                Codigo = objDocumentoBussiness.ActualizarProveedor(objEntidadProveedor, ListaMarcasGrid, ListaContactoGrid);
 
                 if (Codigo > 0)
                 {
@@ -310,34 +308,34 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
 
             try
             {
-               
-                
-                    objEmpresa = Nissi.nFact.Servicios.BusquedaRucDni(TipoDocumento, txtNumero.Text);
 
-                    if (objEmpresa.Exito.Equals(-1))
+
+                objEmpresa = Nissi.nFact.Servicios.BusquedaRucDni(TipoDocumento, txtNumero.Text);
+
+                if (objEmpresa.Exito.Equals(-1))
+                {
+                    MessageBox.Show("No se encontro informacion..!");
+                    txtRazonSocial.Text = string.Empty;
+                    txtDirecion.Text = string.Empty;
+                    txtNumero.Focus();
+
+                }
+                else
+                {
+                    if (TipoDocumento.Equals(1))  //RUC
                     {
-                        MessageBox.Show("No se encontro informacion..!");
-                        txtRazonSocial.Text = string.Empty;
-                        txtDirecion.Text = string.Empty;
-                        txtNumero.Focus();
-
+                        txtRazonSocial.Text = objEmpresa.razonSocial;
+                        txtDirecion.Text = objEmpresa.direccion;
                     }
-                    else
+
+                    if (TipoDocumento.Equals(2))  //DNI
                     {
-                        if (TipoDocumento.Equals(1))  //RUC
-                        {
-                            txtRazonSocial.Text = objEmpresa.razonSocial;
-                            txtDirecion.Text = objEmpresa.direccion;
-                        }
-
-                        if (TipoDocumento.Equals(2))  //DNI
-                        {
-                            txtRazonSocial.Text = objEmpresa.nombres + " " + objEmpresa.apellidopaterno + " " + objEmpresa.apellidomaterno;
-                            txtDirecion.Text = objEmpresa.direccion;
-                        }
-
+                        txtRazonSocial.Text = objEmpresa.nombres + " " + objEmpresa.apellidopaterno + " " + objEmpresa.apellidomaterno;
+                        txtDirecion.Text = objEmpresa.direccion;
                     }
-               
+
+                }
+
             }
             catch (Exception ex)
             {
@@ -351,7 +349,7 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
             SIGA.Business.Logistica.ProveedorBusiness objProveedor = new SIGA.Business.Logistica.ProveedorBusiness();
 
 
-            if (txtNumero.Text == string.Empty || txtNombreComercial.Text == string.Empty || txtRazonSocial.Text == string.Empty || Convert.ToInt16(cboTipoDocumento.SelectedValue) == 0 )
+            if (txtNumero.Text == string.Empty || txtNombreComercial.Text == string.Empty || txtRazonSocial.Text == string.Empty || Convert.ToInt16(cboTipoDocumento.SelectedValue) == 0)
             {
                 MessageBox.Show("Debe ingresar datos necesarios...!", "SIGA");
                 return;
@@ -364,7 +362,8 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
             {
                 ActualizarProveedor();
             }
-            else {  
+            else
+            {
                 if (tabProveedor.SelectedIndex == 1)
                 {
                     RegistrarContactoProveedor();
@@ -376,7 +375,7 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
 
                     if (Encontro == false)
                     {
-                        
+
 
                         RegistrarProveedor();
                     }
@@ -384,7 +383,7 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
                     {
                         MessageBox.Show("Existe un proveedor registrado con este tipo de documento y numero", "SIGA");
                     }
-                   
+
                 }
             }
         }
@@ -412,7 +411,7 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
                 return;
             }
 
-            AgregarContacto(TxtContacto.Text, TxtCargo.Text , TxtArea.Text, cboOperador.Text, TxtNumeroTel.Text,txtCorreo.Text);
+            AgregarContacto(TxtContacto.Text, TxtCargo.Text, TxtArea.Text, cboOperador.Text, TxtNumeroTel.Text, txtCorreo.Text);
             cargarListaContactos();
         }
 
@@ -428,9 +427,9 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
         }
 
         void cargarListaMarcas()
-        {            
+        {
             dgvMarcas.DataSource = null;
-            dgvMarcas.DataSource = ListaMarcasGrid;          
+            dgvMarcas.DataSource = ListaMarcasGrid;
         }
 
         void cargarListaContactos()
@@ -439,30 +438,31 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
             dgvContactos.DataSource = ListaContactoGrid;
         }
 
-        void AgregarMarca(short codigo, string marca ) {
-                        
+        void AgregarMarca(short codigo, string marca)
+        {
+
             var buscar = ListaMarcasGrid.Where(x => x.CodMarca == Convert.ToInt16(cboMarca.SelectedValue));
 
             if (buscar.Count() > 0)
             {
-                MessageBox.Show("La marca ya existe","SIGA");
+                MessageBox.Show("La marca ya existe", "SIGA");
                 return;
             }
 
             ListaMarcasGrid.Add(new ProveedorMarca { CodMarca = codigo, Marca = marca });
         }
 
-        void AgregarContacto(string contacto, string cargo, string area, string operador , string numero,string Correo)
-        {                       
+        void AgregarContacto(string contacto, string cargo, string area, string operador, string numero, string Correo)
+        {
             ListaContactoGrid.Add(new ProveedorContacto
             {
                 ProCodigo = Convert.ToInt32(TxtCodigoGenerado.Text),
-                CodOperador = Convert.ToInt16(cboOperador.SelectedValue), 
+                CodOperador = Convert.ToInt16(cboOperador.SelectedValue),
                 NomProveedorContacto = contacto,
-                CarProveedorContacto=cargo,
-                Operador=operador, 
+                CarProveedorContacto = cargo,
+                Operador = operador,
                 AreProveedorContacto = area,
-                NumTelProveedorContacto=numero ,
+                NumTelProveedorContacto = numero,
                 CorreoElectronico = Correo,
                 UsuCreCodigo = UsuarioLogeo.Codigo
             });
@@ -473,23 +473,24 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
             if (dgvMarcas.RowCount > 0)
             {
                 var codigo = Convert.ToString(dgvMarcas[0, dgvMarcas.CurrentRow.Index].Value);
-                 
+
                 if (CodigoProveedor > 0)
                 {
                     ProveedorBusiness objDocumentoBussiness = new ProveedorBusiness();
                     ProveedorMarca objEntidadProveedorMarca = new ProveedorMarca();
-                    objEntidadProveedorMarca.CodMarca= Convert.ToInt16(codigo);
+                    objEntidadProveedorMarca.CodMarca = Convert.ToInt16(codigo);
                     objEntidadProveedorMarca.ProCodigo = CodigoProveedor;
 
                     objDocumentoBussiness.EliminarProveedorMarca(objEntidadProveedorMarca);
 
-                    cargaBdListaMarcas();                    
+                    cargaBdListaMarcas();
                 }
-                else { 
+                else
+                {
                     ListaMarcasGrid.RemoveAll(s => s.CodMarca == Convert.ToInt16(codigo));
                 }
 
-                cargarListaMarcas(); 
+                cargarListaMarcas();
             }
         }
 
@@ -506,20 +507,21 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
                     ProveedorBusiness objDocumentoBussiness = new ProveedorBusiness();
                     ProveedorContacto objEntidadProveedorContacto = new ProveedorContacto();
                     objEntidadProveedorContacto.ProCodigo = CodigoProveedor;
-                    objEntidadProveedorContacto.CodProveedorContacto =Convert.ToInt32(CodProveedorContacto);
+                    objEntidadProveedorContacto.CodProveedorContacto = Convert.ToInt32(CodProveedorContacto);
                     objDocumentoBussiness.EliminarProveedorContacto(objEntidadProveedorContacto);
 
                     cargaBdListaContactos();
                 }
-                else{ 
+                else
+                {
                     ListaContactoGrid.RemoveAll(s => s.CodOperador == Convert.ToInt16(codigo) && s.NomProveedorContacto == nombre);
                     cargarListaContactos();
-                }                 
+                }
             }
         }
-     
+
         void CambiarMarca()
-        {            
+        {
             if (optMarca.Checked)
             {
                 cboMarca.Enabled = true;
@@ -529,8 +531,8 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
                 cboMarca.Enabled = false;
                 dgvMarcas.DataSource = null;
                 ListaMarcasGrid = null;
-                ListaMarcasGrid = new List<ProveedorMarca>();                
-            }        
+                ListaMarcasGrid = new List<ProveedorMarca>();
+            }
         }
 
         void ColumnasGrillaMarca()
@@ -551,10 +553,10 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
             dgvMarcas.Columns[1].HeaderText = "Marca";
             dgvMarcas.Columns[1].Name = "Marca";
             dgvMarcas.Columns[1].DataPropertyName = "Marca";
-            dgvMarcas.Columns[1].Width = 150;        
+            dgvMarcas.Columns[1].Width = 150;
 
         }
-        
+
         void ColumnasGrillaContacto()
         {
             dgvContactos.ReadOnly = true;
@@ -607,7 +609,7 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
             dgvContactos.Columns[7].DataPropertyName = "CorreoElectronico";
             dgvContactos.Columns[7].Visible = true;
         }
-                  
+
         private void optSinMarca_CheckedChanged(object sender, EventArgs e)
         {
             CambiarMarca();
@@ -621,11 +623,11 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
             if (dgvContactos.RowCount > 0)
             {
                 Evaluar = true;
-                
+
             }
 
             return Evaluar;
-           
+
         }
 
         //private void frmRegProveedor_FormClosing(object sender, EventArgs e)
@@ -646,9 +648,9 @@ namespace SIGA.Windows.Logistica.Formularios.Mantenimientos
             bool Evaluado = EvaluarlLlenadoGrilla();
 
             if (Evaluado == false)
-                {
-                    MessageBox.Show("Debe ingresar un contacto..", "SIGA");
-               }
+            {
+                MessageBox.Show("Debe ingresar un contacto..", "SIGA");
+            }
 
         }
 

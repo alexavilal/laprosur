@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.DAO.Logistica;
+﻿using SIGA.DAO.Logistica;
 using SIGA.Entities.Logistica;
+using System.Collections.Generic;
 
 namespace SIGA.Business.Logistica
 {
@@ -20,7 +17,7 @@ namespace SIGA.Business.Logistica
 
         public int RegistrarFamilia(Familia objFamilia)
         {
-            
+
             FamiliaDao _GeneralRepository = new FamiliaDao();
             var Codigo = _GeneralRepository.RegistrarFamilia(objFamilia);
             return Codigo;
@@ -46,6 +43,6 @@ namespace SIGA.Business.Logistica
             return _GeneralRepository.ObtenerFamiliaPorCodigo(objFamilia);
         }
 
-    
+
     }
 }

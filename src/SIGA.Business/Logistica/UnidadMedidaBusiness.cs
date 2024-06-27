@@ -1,8 +1,5 @@
-﻿using System;
+﻿using SIGA.Entities.Logistica;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.Entities.Logistica;
 
 
 namespace SIGA.Business.Logistica
@@ -31,7 +28,7 @@ namespace SIGA.Business.Logistica
         {
             int Codigo = 0;
             SIGA.DAO.Logistica.UndadMedidaDao _GeneralRepository = new SIGA.DAO.Logistica.UndadMedidaDao();
-      
+
             Codigo = _GeneralRepository.ActualizarUnidadMedida(objUnidadMedida);
             return Codigo;
         }
@@ -39,19 +36,19 @@ namespace SIGA.Business.Logistica
         public List<UnidadMedida> ObtenerUnidadMedidas(UnidadMedida objUnidadMedida)
         {
             SIGA.DAO.Logistica.UndadMedidaDao _GeneralRepository = new SIGA.DAO.Logistica.UndadMedidaDao();
-      
+
             return _GeneralRepository.ObtenerUnidadMedidas(objUnidadMedida);
         }
 
         public UnidadMedida ObtenerUnidadMedidaPorCodigo(UnidadMedida objUnidadMedida)
         {
             SIGA.DAO.Logistica.UndadMedidaDao _GeneralRepository = new SIGA.DAO.Logistica.UndadMedidaDao();
-      
+
             return _GeneralRepository.ObtenerUnidadMedidaPorCodigo(objUnidadMedida);
         }
 
-     
-    
-    
+
+
+
     }
 }

@@ -1,13 +1,6 @@
 ﻿using SIGA.Business.Ventas;
-using SIGA.Entities.Ventas;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SIGA.Windows.Ventas.Formularios
@@ -40,7 +33,7 @@ namespace SIGA.Windows.Ventas.Formularios
 
                 int Guia = Convert.ToInt32(dgvGuia[0, dgvGuia.CurrentRow.Index].Value);
                 ImprimirGuia(Guia);
-                
+
 
             }
             else
@@ -104,7 +97,7 @@ namespace SIGA.Windows.Ventas.Formularios
         private void btnAnula_Click(object sender, EventArgs e)
         {
             int Guia = 0;
-            string strEstado = string.Empty; 
+            string strEstado = string.Empty;
 
             if ((dgvGuia.RowCount > 0))
             {

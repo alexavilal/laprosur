@@ -1,9 +1,9 @@
-﻿using System;
+﻿using SIGA.Business.Administrador;
+using SIGA.Entities.Administrador;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using SIGA.Business.Administrador;
-using SIGA.Entities.Administrador;
 
 namespace SIGA.Windows.Administrador
 {
@@ -56,9 +56,9 @@ namespace SIGA.Windows.Administrador
                 int Codigo = 0;
                 OpcionBusiness objDocumentoBussiness = new OpcionBusiness();
                 Opcion objEntidad = new Opcion();
-                objEntidad.CodModulo = Convert.ToInt16(CboModulo.SelectedValue); 
+                objEntidad.CodModulo = Convert.ToInt16(CboModulo.SelectedValue);
                 objEntidad.DesOpcion = TxtDescripcion.Text;
-                objEntidad.RutOpcion = TxtRuta.Text; 
+                objEntidad.RutOpcion = TxtRuta.Text;
                 objEntidad.UsuCre = UsuarioLogeo.Codigo;  // por definir, dato de prueba 
 
                 Codigo = objDocumentoBussiness.RegistrarOpcion(objEntidad);
@@ -90,10 +90,10 @@ namespace SIGA.Windows.Administrador
                 OpcionBusiness objDocumentoBussiness = new OpcionBusiness();
                 Opcion objEntidad = new Opcion();
 
-                objEntidad.CodModulo = Convert.ToInt16(CboModulo.SelectedValue);  
+                objEntidad.CodModulo = Convert.ToInt16(CboModulo.SelectedValue);
                 objEntidad.CodOpcion = CodigoEdicion;
                 objEntidad.DesOpcion = TxtDescripcion.Text;
-                objEntidad.RutOpcion = TxtRuta.Text; 
+                objEntidad.RutOpcion = TxtRuta.Text;
                 objEntidad.UsuMod = UsuarioLogeo.Codigo;  // por definir, dato de prueba
                 objEntidad.EstCodigo = Convert.ToString(CboEstado.SelectedValue);
 
@@ -128,7 +128,7 @@ namespace SIGA.Windows.Administrador
             TxtCodigo.Text = Convert.ToString(consulta.CodOpcion);
             CboModulo.SelectedValue = consulta.CodModulo;
             TxtDescripcion.Text = consulta.DesOpcion;
-            TxtRuta.Text = consulta.RutOpcion;          
+            TxtRuta.Text = consulta.RutOpcion;
             CboEstado.SelectedValue = consulta.EstCodigo;
         }
 
@@ -141,7 +141,7 @@ namespace SIGA.Windows.Administrador
 
             CboModulo.DataSource = objBusiness.ObtenerModulos(objModulo);
             CboModulo.ValueMember = "CodigoModulo";
-            CboModulo.DisplayMember = "DescripcionModulo"; 
+            CboModulo.DisplayMember = "DescripcionModulo";
 
         }
 
@@ -158,10 +158,10 @@ namespace SIGA.Windows.Administrador
             {
                 CboEstado.Enabled = true;
                 ObtenerDatos();
-            }            
+            }
         }
 
-        
+
 
     }
 }

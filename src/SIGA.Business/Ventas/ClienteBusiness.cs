@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.DAO.Ventas;
-using SIGA.Entities.Ventas;
-using SIGA.Entities.Logistica;
-using SIGA.DAO.Logistica;
+﻿using SIGA.DAO.Ventas;
 using SIGA.Entities.Comunes;
+using SIGA.Entities.Ventas;
+using System;
+using System.Collections.Generic;
 
 namespace SIGA.Business.Ventas
 {
@@ -14,7 +10,7 @@ namespace SIGA.Business.Ventas
     {
         bool disposed = false;
 
-   
+
         public ClienteResponse BuscarPorCodigo(string pCodigo)
         {
             ClienteDao _ClienteRepository = new ClienteDao();
@@ -27,13 +23,13 @@ namespace SIGA.Business.Ventas
             ClienteDao _ClienteRepository = new ClienteDao();
             var lstResult = _ClienteRepository.BuscarPorNombre(pCodigo);
             return lstResult;
-       
+
         }
 
-        public List<ClienteResponse> BuscarPorTipoDocumento(int pTipoDocumento,string pNumeroDocumento)
+        public List<ClienteResponse> BuscarPorTipoDocumento(int pTipoDocumento, string pNumeroDocumento)
         {
             ClienteDao _ClienteRepository = new ClienteDao();
-            var lstResult = _ClienteRepository.BuscarPorTipoDocumento(pTipoDocumento,pNumeroDocumento);
+            var lstResult = _ClienteRepository.BuscarPorTipoDocumento(pTipoDocumento, pNumeroDocumento);
             return lstResult;
 
         }
@@ -97,11 +93,11 @@ namespace SIGA.Business.Ventas
             disposed = true;
         }
 
-        public string RegistrarCliente(ClienteResponse objClienteResponse,List<ClientePlaca> lstPlacas)
+        public string RegistrarCliente(ClienteResponse objClienteResponse, List<ClientePlaca> lstPlacas)
         {
             string Codigo = "0";
             ClienteDao _ClienteRepository = new ClienteDao();
-            Codigo = _ClienteRepository.RegistrarCliente(objClienteResponse,lstPlacas);
+            Codigo = _ClienteRepository.RegistrarCliente(objClienteResponse, lstPlacas);
             return Codigo;
         }
         public ClienteResponse ObtenerClientePorCodigo(ClienteResponse objEntidad)

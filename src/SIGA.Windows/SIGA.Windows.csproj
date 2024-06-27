@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SIGA.Windows</RootNamespace>
     <AssemblyName>SIGA.Windows</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -158,6 +158,12 @@
     </Compile>
     <Compile Include="Comunes\frmProductoBuscar.Designer.cs">
       <DependentUpon>frmProductoBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comunes\frmProveedorBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comunes\frmProveedorBuscar.Designer.cs">
+      <DependentUpon>frmProveedorBuscar.cs</DependentUpon>
     </Compile>
     <Compile Include="dbLaProSurDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -408,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Comunes\frmProductoBuscar.resx">
       <DependentUpon>frmProductoBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comunes\frmProveedorBuscar.resx">
+      <DependentUpon>frmProveedorBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\Formularios\Busquedas\frmBuscaProveedor.resx">
       <DependentUpon>frmBuscaProveedor.cs</DependentUpon>

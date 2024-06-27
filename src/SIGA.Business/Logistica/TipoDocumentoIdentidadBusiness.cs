@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.DAO;
+﻿using SIGA.DAO.Logistica;
 using SIGA.Entities.Logistica;
-using SIGA.DAO.Logistica;
+using System.Collections.Generic;
 
 namespace SIGA.Business.Logistica
 {
@@ -12,9 +8,9 @@ namespace SIGA.Business.Logistica
     {
         public List<TipoDocumentoIdentificacion> ListarTipoDocumentoIdentidad()
         {
-                TipoDocumentoIdentificacionDao _ParametroRepository = new TipoDocumentoIdentificacionDao();
+            TipoDocumentoIdentificacionDao _ParametroRepository = new TipoDocumentoIdentificacionDao();
 
-                    return _ParametroRepository.ListarTipoDocumentoIdentidad(); 
+            return _ParametroRepository.ListarTipoDocumentoIdentidad();
         }
     }
 }

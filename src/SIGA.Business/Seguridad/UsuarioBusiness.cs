@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.DAO.Comunes;
+﻿using SIGA.DAO.Seguridad;
 using SIGA.Entities.Seguridad;
-using System.Data.SqlClient;
+using System;
+using System.Collections.Generic;
 using System.Data;
-using SIGA.DAO.Seguridad;
 
 namespace SIGA.Business.Seguridad
 {

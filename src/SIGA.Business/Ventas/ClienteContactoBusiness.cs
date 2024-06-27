@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.DAO.Ventas;
+﻿using SIGA.DAO.Ventas;
 using SIGA.Entities.Ventas;
+using System.Collections.Generic;
 
 namespace SIGA.Business.Ventas
 {
@@ -22,16 +19,16 @@ namespace SIGA.Business.Ventas
 
         }
         public int RegistrarClienteContacto(List<ClienteContacto> ListaClienteContacto)
-        {           
+        {
             ClienteContactoDao _GeneralRepository = new ClienteContactoDao();
-            return _GeneralRepository.RegistrarClienteContacto(ListaClienteContacto);            
+            return _GeneralRepository.RegistrarClienteContacto(ListaClienteContacto);
         }
 
 
         public int ActualizarCliente(ClienteResponse objClienteResponse, List<ClientePlaca> lstPlacas)
         {
             ClienteContactoDao _GeneralRepository = new ClienteContactoDao();
-            return _GeneralRepository.ActualizarCliente(objClienteResponse,lstPlacas);     
+            return _GeneralRepository.ActualizarCliente(objClienteResponse, lstPlacas);
         }
 
     }

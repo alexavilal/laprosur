@@ -1,9 +1,9 @@
-﻿using System;
+﻿using SIGA.Business.Administrador;
+using SIGA.Entities.Administrador;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using SIGA.Business.Administrador;
-using SIGA.Entities.Administrador;
 
 namespace SIGA.Windows.Administrador
 {
@@ -35,9 +35,9 @@ namespace SIGA.Windows.Administrador
             {
                 int Codigo = 0;
                 ModuloBusiness objDocumentoBussiness = new ModuloBusiness();
-                Modulo objEntidad = new Modulo();               
-                objEntidad.DescripcionModulo = TxtDescripcion.Text;               
-                objEntidad.UsuCreacion  = 1;  // por definir, dato de prueba
+                Modulo objEntidad = new Modulo();
+                objEntidad.DescripcionModulo = TxtDescripcion.Text;
+                objEntidad.UsuCreacion = 1;  // por definir, dato de prueba
                 Codigo = objDocumentoBussiness.RegistrarModulo(objEntidad);
 
                 if (Codigo > 0)
@@ -65,7 +65,7 @@ namespace SIGA.Windows.Administrador
             {
                 int Codigo = 0;
                 ModuloBusiness objDocumentoBussiness = new ModuloBusiness();
-                Modulo objEntidad  = new Modulo();
+                Modulo objEntidad = new Modulo();
                 objEntidad.CodigoModulo = CodigoEdicion;
                 objEntidad.DescripcionModulo = TxtDescripcion.Text;
                 objEntidad.EstadoModulo = Convert.ToString(cboEstado.SelectedValue);
@@ -85,11 +85,11 @@ namespace SIGA.Windows.Administrador
             {
                 throw new Exception("Error, Consulte con el administrador");
             }
-            
+
             this.Close();
         }
 
-        
+
         private void FrmRegistroModulo_Load(object sender, EventArgs e)
         {
             CargarEstado();
@@ -115,8 +115,8 @@ namespace SIGA.Windows.Administrador
             var consulta = objModuloBusiness.ObtenerModuloPorCodigo(objProveedor);
 
             TxtCodigo.Text = Convert.ToString(consulta.CodigoModulo);
-            TxtDescripcion.Text = consulta.DescripcionModulo ;
-            cboEstado.SelectedValue=  consulta.EstadoModulo;  
+            TxtDescripcion.Text = consulta.DescripcionModulo;
+            cboEstado.SelectedValue = consulta.EstadoModulo;
         }
 
         void CargarEstado()

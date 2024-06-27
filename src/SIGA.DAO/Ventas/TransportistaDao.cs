@@ -2,11 +2,8 @@
 using SIGA.Entities.Ventas;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Ventas
 {
@@ -74,7 +71,7 @@ namespace SIGA.DAO.Ventas
                                 cmd.Parameters.AddWithValue("@RazSocTransportista", objTransportistaResponse.RazSocTransportista);
                                 cmd.Parameters.AddWithValue("@DirTransportista", objTransportistaResponse.DirTransportista);
                                 cmd.Parameters.AddWithValue("@EstCodigo", "A");
-                                cmd.Parameters.AddWithValue("@UsuCreCodigo",1);
+                                cmd.Parameters.AddWithValue("@UsuCreCodigo", 1);
                                 cmd.Parameters.Add("@CodTransportista", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
                                 cmd.Transaction = tran as SqlTransaction;
                                 cmd.ExecuteNonQuery();
@@ -136,7 +133,7 @@ namespace SIGA.DAO.Ventas
                             ItemResult.CodTipoDocumento = Convert.ToByte(dr.GetValue(1));
                             ItemResult.NumDocumentoTransportista = Convert.ToString(dr.GetValue(2));
                             ItemResult.RazSocTransportista = Convert.ToString(dr.GetValue(3));
-                            ItemResult.DirTransportista =   Convert.ToString(dr.GetValue(4));
+                            ItemResult.DirTransportista = Convert.ToString(dr.GetValue(4));
                             listResult.Add(ItemResult);
                         }
                     }

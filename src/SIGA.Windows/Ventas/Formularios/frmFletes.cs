@@ -1,12 +1,6 @@
 ﻿using SIGA.Business.Ventas;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SIGA.Windows.Ventas.Formularios
@@ -25,7 +19,7 @@ namespace SIGA.Windows.Ventas.Formularios
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            ImprimirGuia(dtInicio.Value.ToString("yyyyMMdd"), dtFin.Value.ToString("yyyyMMdd"),string.Empty);
+            ImprimirGuia(dtInicio.Value.ToString("yyyyMMdd"), dtFin.Value.ToString("yyyyMMdd"), string.Empty);
         }
 
         private DataTable DatosFlete(string FechaInicial, string FechaFinal, string CodigoTrans)
@@ -34,7 +28,7 @@ namespace SIGA.Windows.Ventas.Formularios
             return objGuia.ReporteFlete(FechaInicial, FechaFinal, CodigoTrans);
         }
 
-        private void ImprimirGuia(string FechaInicial ,string FechaFinal ,string CodigoTrans)
+        private void ImprimirGuia(string FechaInicial, string FechaFinal, string CodigoTrans)
         {
             SIGA.Windows.Comunes.frmImpresion objfrmReporte = new SIGA.Windows.Comunes.frmImpresion();
             string ruta = string.Empty;
@@ -44,7 +38,7 @@ namespace SIGA.Windows.Ventas.Formularios
                 ruta = @"D:\Info_Pc\Ejemplos\Personal\Laprosur\03-Desarrollo\LaProSur\Fuentes\SIGA\SIGA.Windows\Reportes\rptFlete.rdlc";
                 objfrmReporte.Archivo = "rptOrdenCompraZurece.rpt";
                 objfrmReporte.Entidad = "USP_OrdenCompraImpresion";
-                objfrmReporte.DataSource = DatosFlete(FechaInicial,FechaFinal,CodigoTrans);
+                objfrmReporte.DataSource = DatosFlete(FechaInicial, FechaFinal, CodigoTrans);
                 objfrmReporte.WindowState = FormWindowState.Normal;
                 objfrmReporte.sbImprimir(ruta);
                 objfrmReporte.ShowDialog();

@@ -20,7 +20,7 @@ namespace SIGA.Windows.Ventas.Formularios
 
             DataRow[] activeRows = result.Select("Estado = 'activo'");
 
-            
+
             decimal totalImporte = 0;
             foreach (DataRow row in activeRows)
             {

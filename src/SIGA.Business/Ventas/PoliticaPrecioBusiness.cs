@@ -14,7 +14,7 @@ namespace SIGA.Business.Ventas
         }
 
         public List<PoliticaPrecio> ObtenerPolitica(PoliticaPrecio objPolitica)
-        { 
+        {
             PoliticaPrecioDao _PoliticaRepository = new PoliticaPrecioDao();
             var lstResult = _PoliticaRepository.ObtenerPolitica(objPolitica);
             return lstResult;

@@ -1,9 +1,9 @@
-﻿using SIGA.Entities.Ventas;
+﻿using SIGA.DAO.Comunes;
+using SIGA.Entities.Ventas;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using SIGA.DAO.Comunes;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Ventas
 {
@@ -124,7 +124,6 @@ namespace SIGA.DAO.Ventas
                         cmd.Parameters.AddWithValue("@GuiCodigo", Guia);
                         con.Open();
                         dtGuia.Load(cmd.ExecuteReader());
-
                     }
                 }
             }
@@ -165,7 +164,7 @@ namespace SIGA.DAO.Ventas
 
         }
 
-        public DataTable VentarPorFecha(string FechaInicio , string FechaFin , string CodigoCliente)
+        public DataTable VentarPorFecha(string FechaInicio, string FechaFin, string CodigoCliente)
         {
 
             DataTable dtGuia = new DataTable();

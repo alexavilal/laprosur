@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpDatos = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
             this.cboEmpresa = new System.Windows.Forms.ComboBox();
@@ -161,7 +161,7 @@
             this.chkIGV.AutoSize = true;
             this.chkIGV.Checked = true;
             this.chkIGV.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkIGV.Location = new System.Drawing.Point(529, 20);
+            this.chkIGV.Location = new System.Drawing.Point(1150, 99);
             this.chkIGV.Margin = new System.Windows.Forms.Padding(4);
             this.chkIGV.Name = "chkIGV";
             this.chkIGV.Size = new System.Drawing.Size(152, 20);
@@ -194,7 +194,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(525, 22);
+            this.label3.Location = new System.Drawing.Point(624, 16);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 16);
@@ -237,7 +237,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(522, 30);
+            this.label11.Location = new System.Drawing.Point(385, 17);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 16);
@@ -246,7 +246,7 @@
             // 
             // txtNumeroOrigen
             // 
-            this.txtNumeroOrigen.Location = new System.Drawing.Point(564, 27);
+            this.txtNumeroOrigen.Location = new System.Drawing.Point(461, 14);
             this.txtNumeroOrigen.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroOrigen.Name = "txtNumeroOrigen";
             this.txtNumeroOrigen.Size = new System.Drawing.Size(153, 22);
@@ -512,10 +512,10 @@
             // 
             // Cantidad
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = null;
-            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle1;
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.MinimumWidth = 6;
             this.Cantidad.Name = "Cantidad";
@@ -524,10 +524,10 @@
             // 
             // PrecioAnterior
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.PrecioAnterior.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.PrecioAnterior.DefaultCellStyle = dataGridViewCellStyle2;
             this.PrecioAnterior.HeaderText = "PrecioAnterior";
             this.PrecioAnterior.MinimumWidth = 6;
             this.PrecioAnterior.Name = "PrecioAnterior";
@@ -536,10 +536,10 @@
             // 
             // Precio
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Format = "N2";
-            dataGridViewCellStyle11.NullValue = "0";
-            this.Precio.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle3;
             this.Precio.HeaderText = "Precio";
             this.Precio.MinimumWidth = 6;
             this.Precio.Name = "Precio";
@@ -548,10 +548,10 @@
             // 
             // Total
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Format = "N2";
-            dataGridViewCellStyle12.NullValue = "0";
-            this.Total.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.Total.DefaultCellStyle = dataGridViewCellStyle4;
             this.Total.HeaderText = "Total";
             this.Total.MinimumWidth = 6;
             this.Total.Name = "Total";

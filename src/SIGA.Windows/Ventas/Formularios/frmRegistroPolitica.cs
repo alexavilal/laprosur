@@ -2,13 +2,8 @@
 using SIGA.Entities.Ventas;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
 using System.Windows.Forms;
 
 namespace SIGA.Windows.Ventas.Formularios
@@ -55,7 +50,7 @@ namespace SIGA.Windows.Ventas.Formularios
             try
             {
                 int Codigo = 0;
-               
+
                 PoliticaPrecio objEntidad = new PoliticaPrecio();
                 objEntidad.DesPolitica = TxtDescripcion.Text;
                 objEntidad.EstCodigo = cboEstado.Text.Substring(0, 1);
@@ -87,21 +82,23 @@ namespace SIGA.Windows.Ventas.Formularios
             try
             {
                 PoliticaPrecio objEntidad = new PoliticaPrecio()
-                { CodPolitica = CodigoEdicion,
+                {
+                    CodPolitica = CodigoEdicion,
                     DesPolitica = TxtDescripcion.Text,
                     EstCodigo = cboEstado.Text.Substring(0, 1),
                     UsuCreCodigo = UsuarioLogeo.Codigo
                 };
 
                 var result = objPoliticaPrecioBussiness.ActualizarPolitica(objEntidad);
-                if (result.Equals(0)){
+                if (result.Equals(0))
+                {
                     MessageBox.Show("Se actualizo la politica", "SIGA");
                     this.Close();
                 }
 
             }
-            catch(Exception ex) 
-            { 
+            catch (Exception ex)
+            {
             }
 
             //try
@@ -129,7 +126,7 @@ namespace SIGA.Windows.Ventas.Formularios
             //    throw new Exception("Error, Consulte con el administrador");
             //}
 
-           
+
 
             this.Close();
         }

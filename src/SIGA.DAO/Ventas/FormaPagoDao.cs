@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using SIGA.DAO.Comunes;
 using SIGA.Entities.Ventas;
-using System.Data.SqlClient;
+using System;
+using System.Collections.Generic;
 using System.Data;
-using SIGA.DAO.Comunes;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Ventas
 {
@@ -55,7 +53,7 @@ namespace SIGA.DAO.Ventas
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@DesFormaPago", SqlDbType.VarChar).Value = objFormaPago.DesFormaPago;
                     cmd.Parameters.Add("@EstCodigo", SqlDbType.Char).Value = objFormaPago.EstCodigo;
-                  
+
                     con.Open();
 
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -77,7 +75,7 @@ namespace SIGA.DAO.Ventas
 
 
 
-        public int RegistrarFormaPago(FormaPago objFormaPago,int Tipo)
+        public int RegistrarFormaPago(FormaPago objFormaPago, int Tipo)
         {
             int DocumentoGenerado = 0;
 
@@ -117,7 +115,7 @@ namespace SIGA.DAO.Ventas
         }
 
 
-        public int ActualizarFormaPago(FormaPago objFormaPago,int Tipo)
+        public int ActualizarFormaPago(FormaPago objFormaPago, int Tipo)
         {
             int DocumentoGenerado = 0;
 
@@ -158,7 +156,7 @@ namespace SIGA.DAO.Ventas
         }
 
 
-        public FormaPago ObtenerFormaPagoPorCodigo(FormaPago objFormaPago,int Tipo)
+        public FormaPago ObtenerFormaPagoPorCodigo(FormaPago objFormaPago, int Tipo)
         {
             var ItemResult = new FormaPago();
 

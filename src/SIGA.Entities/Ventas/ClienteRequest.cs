@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SIGA.Entities.Ventas
 {
@@ -15,6 +12,6 @@ namespace SIGA.Entities.Ventas
         public Int16 TipoCLiente { get; set; }
         public Int16 SubTipoCLiente { get; set; }
         public Int16 CodigoUsuario { get; set; }
-        
+
     }
 }

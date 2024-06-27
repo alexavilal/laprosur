@@ -1,5 +1,5 @@
-﻿using SIGA.Entities.Ventas;
-using SIGA.DAO.Ventas;
+﻿using SIGA.DAO.Ventas;
+using SIGA.Entities.Ventas;
 using System.Collections.Generic;
 using System.Data;
 
@@ -19,7 +19,7 @@ namespace SIGA.Business.Ventas
         public List<Transportista> BuscarPorTipoDocumento(int pCodigoTipoDocumento, string pNumeroDocumento)
         {
             TransportistaDao transportistaDao = new TransportistaDao();
-            var result = transportistaDao.BuscarPorTipoDocumento(pCodigoTipoDocumento,pNumeroDocumento);
+            var result = transportistaDao.BuscarPorTipoDocumento(pCodigoTipoDocumento, pNumeroDocumento);
             return result;
         }
         public DataTable DevuelveVehiculo(string Transportista, string PlacaVehiculo)

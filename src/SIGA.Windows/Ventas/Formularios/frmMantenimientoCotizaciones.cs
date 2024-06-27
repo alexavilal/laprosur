@@ -1,7 +1,7 @@
-﻿using SIGA.Business.Ventas;
+﻿using SIGA.Business.Administrador;
+using SIGA.Business.Ventas;
 using System;
 using System.Windows.Forms;
-using SIGA.Business.Administrador;
 
 namespace SIGA.Windows.Ventas.Formularios
 {
@@ -29,7 +29,7 @@ namespace SIGA.Windows.Ventas.Formularios
             Buscar(dtInicio.Value.ToString("yyyyMMdd"), dtFin.Value.ToString("yyyyMMdd"), txtCodigoCliente.Text, Convert.ToInt32(cboVendedor.SelectedValue));
         }
 
-        public void Buscar(string FechaInicio , string FechaFin, string CodigoCliente,int CodigoVendedor)
+        public void Buscar(string FechaInicio, string FechaFin, string CodigoCliente, int CodigoVendedor)
         {
             CotizacionBusiness objCotizacion = new CotizacionBusiness();
 

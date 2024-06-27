@@ -1,19 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MaterialSkin;
+﻿using MaterialSkin;
 using MaterialSkin.Controls;
-using SIGA.Business.Administrador;
-using SIGA.Entities.Administrador;
 using SIGA.Business.Ventas;
 using SIGA.Entities.Ventas;
-using SIGA.Windows.Administrador;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace SIGA.Windows.Ventas.Formularios
 {
@@ -110,7 +101,7 @@ namespace SIGA.Windows.Ventas.Formularios
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            
+
 
 
             int Codigo = 0;
@@ -123,7 +114,7 @@ namespace SIGA.Windows.Ventas.Formularios
                 //objForm.FormClosed += new FormClosedEventHandler(frmRegistroZona_FormClosed);
                 objForm.CodigoEdicion = Codigo;
                 objForm.ShowDialog();
-                
+
 
 
                 Buscar();

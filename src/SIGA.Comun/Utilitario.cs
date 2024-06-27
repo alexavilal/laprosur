@@ -1,30 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SIGA.Comun
 {
     public class Utilitario
     {
-        private string[] sUnidades = 
-        {"", "un", "dos", "tres", "cuatro", "cinco", 
-        "seis", "siete", "ocho", "nueve", "diez", 
-        "once", "doce", "trece", "catorce", 
-        "quince", "dieciseis", 
-        "diecisiete", "dieciocho", "diecinueve", "veinte", 
+        private string[] sUnidades =
+        {"", "un", "dos", "tres", "cuatro", "cinco",
+        "seis", "siete", "ocho", "nueve", "diez",
+        "once", "doce", "trece", "catorce",
+        "quince", "dieciseis",
+        "diecisiete", "dieciocho", "diecinueve", "veinte",
         "veintiún", "veintidos", "veintitres", "veinticuatro",
-        "veinticinco", "veintiseis", "veintisiete", 
+        "veinticinco", "veintiseis", "veintisiete",
         "veintiocho", "veintinueve"};
 
-        private string[] sDecenas = 
+        private string[] sDecenas =
         { "", "diez", "veinte", "treinta", "cuarenta", "cincuenta",
         "sesenta", "setenta", "ochenta", "noventa" };
 
-        private string[] sCentenas = 
-        { "", "ciento", "doscientos", "trescientos", 
+        private string[] sCentenas =
+        { "", "ciento", "doscientos", "trescientos",
         "cuatrocientos",
-        "quinientos", "seiscientos", "setecientos", 
+        "quinientos", "seiscientos", "setecientos",
         "ochocientos", "novecientos" };
 
 
@@ -214,6 +211,6 @@ namespace SIGA.Comun
             return sTexto;
         }
 
-    
+
     }
 }

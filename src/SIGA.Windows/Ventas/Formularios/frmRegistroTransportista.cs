@@ -4,12 +4,7 @@ using SIGA.Entities.Logistica;
 using SIGA.Entities.Ventas;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SIGA.Windows.Ventas.Formularios
@@ -33,7 +28,7 @@ namespace SIGA.Windows.Ventas.Formularios
             CargarTipoDocIdentidad();
             // ColumnasGrillaContacto();
 
-            if (CodigoEdicion>0)
+            if (CodigoEdicion > 0)
             {
                 cboEstado.Enabled = false;
             }
@@ -204,7 +199,7 @@ namespace SIGA.Windows.Ventas.Formularios
 
                 Codigo = objDocumentoBussiness.RegistrarTransportista(objtransportista, lstPlacas);
 
-                if (Codigo> 0)
+                if (Codigo > 0)
                 {
                     MessageBox.Show("Se grabaron los datos correctamente", "SIGA");
                     TxtCodigoGenerado.Text = Codigo.ToString();
@@ -273,7 +268,7 @@ namespace SIGA.Windows.Ventas.Formularios
                     txtNombre.Text = consulta.RazSocTransportista.ToString();
                     txtDireccion.Text = consulta.DirTransportista.ToString();
                     cboEstado.SelectedValue = "A";
-                    
+
                 }
                 else
                 {

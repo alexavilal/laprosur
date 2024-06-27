@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using SIGA.Business.Logistica;
+﻿using SIGA.Business.Logistica;
 using SIGA.Entities.Logistica;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
 {
@@ -107,7 +102,7 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
             dgvSede.Columns[1].Name = "DesSede";
             dgvSede.Columns[1].DataPropertyName = "DesSede";
             dgvSede.Columns[1].Width = 350;
-            
+
             dgvSede.Columns[2].HeaderText = "Dirección";
             dgvSede.Columns[2].Name = "DirSede";
             dgvSede.Columns[2].DataPropertyName = "DirSede";
@@ -125,6 +120,6 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
         }
 
 
-        
+
     }
 }

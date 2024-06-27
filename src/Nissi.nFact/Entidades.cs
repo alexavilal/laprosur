@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Nissi.nFact
 {
@@ -33,7 +31,7 @@ namespace Nissi.nFact
             public string apellidopaterno { get; set; }
             public string apellidomaterno { get; set; }
             public string digitoVerificador { get; set; }
-            
+
             public int Exito { get; set; }
         }
 
@@ -191,7 +189,7 @@ namespace Nissi.nFact
             public List<ItemsGuia> items { get; set; }
             public List<DocumentoRelacionado> documento_relacionado { get; set; }
             public List<vehiculos_secundarios> vehiculos_secundarios { get; set; }
-           
+
             public List<conductores_secundarios> conductores_secundarios { get; set; }
 
         }

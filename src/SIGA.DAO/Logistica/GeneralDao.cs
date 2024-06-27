@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using SIGA.DAO.Comunes;
 using SIGA.Entities.Logistica;
-using System.Data.SqlClient;
-using System.Data.Common;
-using System.Data;
 using SIGA.Entities.Ventas;
-using SIGA.DAO.Comunes;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Logistica
 {
@@ -103,7 +100,7 @@ namespace SIGA.DAO.Logistica
 
         }
 
-        public DataTable ConsultarMantenimiento(short CodigoEmpresa, short CodigoMarca, short CodigoMaterial, short CodigoFamilia, short CodigoSubFamilia, short CodigoColor, short CodigoCapacidad, short CodigoForma, short CodigoUnidad, short CodigoEmpaque, string Descripcion, string Estado, short CodigoClasificacion, string CodigoExterno, int CodigoSeccion,string Ventas)
+        public DataTable ConsultarMantenimiento(short CodigoEmpresa, short CodigoMarca, short CodigoMaterial, short CodigoFamilia, short CodigoSubFamilia, short CodigoColor, short CodigoCapacidad, short CodigoForma, short CodigoUnidad, short CodigoEmpaque, string Descripcion, string Estado, short CodigoClasificacion, string CodigoExterno, int CodigoSeccion, string Ventas)
         {
             DataTable dataTable = new DataTable();
             using (SqlConnection connection = new SqlConnection(this.Conection.cadenaConexion()))

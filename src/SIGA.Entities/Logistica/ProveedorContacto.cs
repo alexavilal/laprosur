@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SIGA.Entities.Logistica
 {
@@ -9,7 +6,7 @@ namespace SIGA.Entities.Logistica
     {
         public int ProCodigo { get; set; }
         public int CodProveedorContacto { get; set; }
-        public string  NomProveedorContacto { get; set; }
+        public string NomProveedorContacto { get; set; }
         public string CarProveedorContacto { get; set; }
         public string AreProveedorContacto { get; set; }
         public Int16 CodOperador { get; set; }
@@ -20,6 +17,6 @@ namespace SIGA.Entities.Logistica
         public DateTime FecMod { get; set; }
         public string Operador { get; set; }
         public string CorreoElectronico { get; set; }
-        
+
     }
 }

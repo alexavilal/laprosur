@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.DAO.Comunes;
+﻿using SIGA.DAO.Comunes;
 using SIGA.Entities.Logistica;
-using System.Data.SqlClient;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Logistica
 {
@@ -42,7 +40,7 @@ namespace SIGA.DAO.Logistica
             return listResult;
         }
 
-       
+
 
 
         public List<Operador> ObtenerOperadores(Operador objOperador)

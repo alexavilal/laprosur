@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using SIGA.Comun.Dto;
 using SIGA.DAO.Logistica;
 using SIGA.Entities.Logistica;
-using SIGA.Comun.Dto;
+using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace SIGA.Business.Logistica
 {
     public class DocumentoProveedorBusiness
     {
-        public int InsertarDocumento(DocumentoProveedor Documento, List<DetalleDocumentoProveedor> Lista,Int16 CodigoAlmacen,int CodigoNota,ref string Numero)
+        public int InsertarDocumento(DocumentoProveedor Documento, List<DetalleDocumentoProveedor> Lista, Int16 CodigoAlmacen, int CodigoNota, ref string Numero)
         {
             DocumentoProveedorDao _DocumentoRepository = new DocumentoProveedorDao();
-            return _DocumentoRepository.InsertarDocumento(Documento, Lista,CodigoAlmacen,CodigoNota,ref Numero);
+            return _DocumentoRepository.InsertarDocumento(Documento, Lista, CodigoAlmacen, CodigoNota, ref Numero);
         }
 
         public int InsertarDocumentoNew(DocumentoProveedor Documento, List<DetalleDocumentoProveedor> Lista, Int16 CodigoAlmacen, int CodigoNota, ref string Numero)
@@ -30,7 +28,7 @@ namespace SIGA.Business.Logistica
 
         }
 
-        public DataTable ConsultarPorDocumento(string FechaInicio,string FechaFinal,int CodigoProveedor,Int16 CodigoEmpresa)
+        public DataTable ConsultarPorDocumento(string FechaInicio, string FechaFinal, int CodigoProveedor, Int16 CodigoEmpresa)
         {
             DocumentoProveedorDao _DocumentoRepository = new DocumentoProveedorDao();
             return _DocumentoRepository.ConsultarPorDocumento(FechaInicio, FechaFinal, CodigoProveedor, CodigoEmpresa);
@@ -38,10 +36,10 @@ namespace SIGA.Business.Logistica
         }
 
 
-        public DataTable ConsultarPorDocumentoIngresado(int CodigoDocumento,string NumeroDocumento,int CodigoProveedor)
+        public DataTable ConsultarPorDocumentoIngresado(int CodigoDocumento, string NumeroDocumento, int CodigoProveedor)
         {
             DocumentoProveedorDao _DocumentoRepository = new DocumentoProveedorDao();
-            return _DocumentoRepository.ConsultarDocumentoIngresado(CodigoDocumento,NumeroDocumento,CodigoProveedor);
+            return _DocumentoRepository.ConsultarDocumentoIngresado(CodigoDocumento, NumeroDocumento, CodigoProveedor);
 
         }
 

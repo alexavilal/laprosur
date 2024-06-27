@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SIGA.Entities.Ventas
 {
     public class ClienteContacto
-    {        
+    {
         public Int16 CodClienteContacto { get; set; }
         public string CodCliente { get; set; }
         public string NomConCliente { get; set; }
@@ -26,7 +23,7 @@ namespace SIGA.Entities.Ventas
         public DateTime FecCre { get; set; }
         public Int16 UsuCreCodigo { get; set; }
         public DateTime FecMod { get; set; }
-        public Int16 UsuModCodigo { get; set; } 
+        public Int16 UsuModCodigo { get; set; }
 
     }
 }

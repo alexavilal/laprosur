@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
@@ -20,13 +16,14 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
 
         private void frmMantenimientoOtrosIngresos_Load(object sender, EventArgs e)
         {
-          
+
             txtRazonSocial.Enabled = false;
             chkTodos.Checked = true;
             button3.Enabled = false;
             txtCodigoProveedor.Text = "0";
-           // CargaSede();
+            //CargaSede();
             //CargaTipoDocumento();
+            CargaAlmacenIngreso(1);
 
         }
         private void CargaAlmacenIngreso(Int16 CodigoSede)
@@ -37,7 +34,6 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
             List<SIGA.Entities.Logistica.Almacen> Lista = new List<SIGA.Entities.Logistica.Almacen>();
             Lista.Add(new SIGA.Entities.Logistica.Almacen { CodAlmacen = 0, DesAlmacen = "Seleccione" });
 
-
             var resutlMarca = objAlmacenBusiness.ListarPorSede(CodigoSede);
 
             foreach (var item in resutlMarca)
@@ -45,22 +41,16 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
                 Lista.Add(item);
             }
 
-
-
             cboAlmacen.DataSource = Lista;
             cboAlmacen.ValueMember = "CodAlmacen";
             cboAlmacen.DisplayMember = "DesAlmacen";
         }
 
-    
+        //private void CargaSede()
+        //{
 
-       
 
-        private void CargaSede()
-        {
-            
-
-        }
+        //}
 
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -92,15 +82,12 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
             this.Close();
         }
 
-       
-
         private void button3_Click(object sender, EventArgs e)
-        {
-            SIGA.Windows.Logistica.Formularios.Busquedas.frmBuscaProveedor objBusquedaProveedor = new SIGA.Windows.Logistica.Formularios.Busquedas.frmBuscaProveedor();
-            objBusquedaProveedor.ShowDialog();
-            txtCodigoProveedor.Text = objBusquedaProveedor.CodigoProveedor.ToString();
-            txtRazonSocial.Text = objBusquedaProveedor.RazonSocial.ToString();
-           
+        {            
+            SIGA.Windows.Comunes.frmProveedorBuscar objfrmProveedorBuscar = new SIGA.Windows.Comunes.frmProveedorBuscar();
+            objfrmProveedorBuscar.ShowDialog();
+            txtCodigoProveedor.Text = objfrmProveedorBuscar.CodigoProveedor;
+            txtRazonSocial.Text = objfrmProveedorBuscar.NombreProveedor;
         }
 
         private void chkTodos_CheckedChanged(object sender, EventArgs e)
@@ -133,12 +120,9 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
                 if (dataGridView1.RowCount > 0)
                 {
                     int Codigo = 0;
-                
-
 
                     Codigo = Convert.ToInt32(dataGridView1[0, dataGridView1.CurrentRow.Index].Value);
 
-                    
                     if (Codigo > 0)
                     {
                         SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos.frmConsultarDocumentos obj = new SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos.frmConsultarDocumentos();
@@ -151,8 +135,6 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
                     }
 
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -169,8 +151,6 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
             try
             {
                 ruta = @"C:\Trabajo\SIGA-CODE\SIGA\SIGA.Windows\Reportes\rptIngresosSINO.rdlc";
-
-
 
                 objfrmReporte.Archivo = "rptOrdenCompraZurece.rpt";
                 objfrmReporte.Entidad = "USP_MovimientosCaja";
@@ -191,6 +171,6 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
 
         }
 
-       
+
     }
 }

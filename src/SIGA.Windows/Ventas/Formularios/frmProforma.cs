@@ -5,12 +5,7 @@ using SIGA.Entities.Logistica;
 using SIGA.Entities.Ventas;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SIGA.Windows.Ventas.Formularios
@@ -188,7 +183,7 @@ namespace SIGA.Windows.Ventas.Formularios
 
             }
         }
-        public decimal DevuelvePrecioPorItem(int CodGeneral , int CodPolitica , int CodZona)
+        public decimal DevuelvePrecioPorItem(int CodGeneral, int CodPolitica, int CodZona)
         {
             PrecioBusiness objPrecio = new PrecioBusiness();
             decimal precio = 0;
@@ -196,7 +191,8 @@ namespace SIGA.Windows.Ventas.Formularios
             try
             {
                 var result = objPrecio.DevuelvePrecioPorItem(CodGeneral, CodPolitica, CodZona);
-                if (result.Rows.Count > 0){
+                if (result.Rows.Count > 0)
+                {
                     precio = Convert.ToDecimal(result.Rows[0][0]);
                 }
 
@@ -374,7 +370,7 @@ namespace SIGA.Windows.Ventas.Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (dgvItems.RowCount >0)
+            if (dgvItems.RowCount > 0)
             {
 
                 GuardarCotizacion();
@@ -386,8 +382,8 @@ namespace SIGA.Windows.Ventas.Formularios
 
             }
 
-            
-            
+
+
 
         }
 

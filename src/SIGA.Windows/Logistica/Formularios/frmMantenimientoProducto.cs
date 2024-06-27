@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
 using SIGA.Business.Logistica;
 using SIGA.Entities.Logistica;
-using MaterialSkin;
-using MaterialSkin.Controls;
-using System.Net.NetworkInformation;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 namespace SIGA.Windows.Logistica.Formularios
 {
     public partial class frmMantenimientoProducto : MaterialForm
@@ -451,8 +445,8 @@ namespace SIGA.Windows.Logistica.Formularios
             string Descripcion = this.txtDescripcion.Text + "%";
             string str1 = this.txtCodigoBarra.Text + "%";
             string str2 = this.txtCodigoGeneral.Text + "%";
-            
-            this.dataGridView1.DataSource = (object)new GeneralBusiness().ConsultarMantenimiento(Convert.ToInt32(this.cboSeccion.SelectedValue), Convert.ToInt16(this.cboEmpresa.SelectedValue), Convert.ToInt16(this.cboMarca.SelectedValue), Convert.ToInt16(this.cboMaterial.SelectedValue), Convert.ToInt16(this.cboFamilia.SelectedValue), Convert.ToInt16(this.cboSubFamilia.SelectedValue), Convert.ToInt16(this.cboColor.SelectedValue), Convert.ToInt16(this.cboCapacidad.SelectedValue), Convert.ToInt16(this.cboForma.SelectedValue), Convert.ToInt16(this.cboUnidadMedida.SelectedValue), Convert.ToInt16(this.cboEmpaque.SelectedValue), Descripcion, Convert.ToString(this.cboEstado.SelectedValue), Convert.ToInt16(this.cboClasificacion.SelectedValue), "%" + this.txtCodigoGeneral.Text + "%","");
+
+            this.dataGridView1.DataSource = (object)new GeneralBusiness().ConsultarMantenimiento(Convert.ToInt32(this.cboSeccion.SelectedValue), Convert.ToInt16(this.cboEmpresa.SelectedValue), Convert.ToInt16(this.cboMarca.SelectedValue), Convert.ToInt16(this.cboMaterial.SelectedValue), Convert.ToInt16(this.cboFamilia.SelectedValue), Convert.ToInt16(this.cboSubFamilia.SelectedValue), Convert.ToInt16(this.cboColor.SelectedValue), Convert.ToInt16(this.cboCapacidad.SelectedValue), Convert.ToInt16(this.cboForma.SelectedValue), Convert.ToInt16(this.cboUnidadMedida.SelectedValue), Convert.ToInt16(this.cboEmpaque.SelectedValue), Descripcion, Convert.ToString(this.cboEstado.SelectedValue), Convert.ToInt16(this.cboClasificacion.SelectedValue), "%" + this.txtCodigoGeneral.Text + "%", "");
             this.dataGridView1.Columns[0].Visible = false;
             this.dataGridView1.Columns[1].Width = 80;
             this.dataGridView1.Columns[2].Width = 180;

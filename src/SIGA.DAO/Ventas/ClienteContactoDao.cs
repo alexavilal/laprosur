@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using SIGA.DAO.Comunes;
 using SIGA.Entities.Ventas;
-using System.Data.SqlClient;
-using SIGA.DAO.Comunes;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Ventas
 {
@@ -25,12 +23,12 @@ namespace SIGA.DAO.Ventas
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@CodClienteContacto", SqlDbType.Int).Value = objClienteContacto.CodClienteContacto;
-                    
+
                     SqlParameter parm2 = new SqlParameter("@RESULTADO", SqlDbType.Int);
                     parm2.Size = 7;
                     parm2.Direction = ParameterDirection.Output;
                     cmd.Parameters.Add(parm2);
-                    
+
                     cmd.ExecuteNonQuery();
 
                     DocumentoGenerado = Convert.ToInt32(cmd.Parameters["@RESULTADO"].Value);
@@ -67,7 +65,7 @@ namespace SIGA.DAO.Ventas
                             ItemResult.CodOperador = Convert.ToInt16(dr.GetValue(5));
                             ItemResult.CodOperador2 = Convert.ToInt16(dr.GetValue(6));
                             ItemResult.operador1 = Convert.ToString(dr.GetValue(7));
-                            ItemResult.operador2 = Convert.ToString(dr.GetValue(8));                       
+                            ItemResult.operador2 = Convert.ToString(dr.GetValue(8));
                             ItemResult.TeleConCliente = Convert.ToString(dr.GetValue(9));
                             ItemResult.ApellidoConCliente = Convert.ToString(dr.GetValue(10));
                             ItemResult.CorConCliente = Convert.ToString(dr.GetValue(11));
@@ -114,7 +112,7 @@ namespace SIGA.DAO.Ventas
                                 objClienteContacto.CelConCliente2 = item.CelConCliente2;
                                 objClienteContacto.CodOperador = item.CodOperador;
                                 objClienteContacto.CodOperador2 = item.CodOperador2;
-                                
+
                                 var consultarExiste = ObtenerClienteContactoPorCodigo(objClienteContacto);
                                 if (consultarExiste.Equals(0))
                                 {
@@ -154,7 +152,7 @@ namespace SIGA.DAO.Ventas
                             using (SqlCommand cmd = new SqlCommand("USP_ClienteContactoInsertar", con))
                             {
                                 cmd.CommandType = CommandType.StoredProcedure;
-                                cmd.Parameters.Add("@CodCliente", SqlDbType.VarChar).Value =    objClienteContacto.CodCliente;
+                                cmd.Parameters.Add("@CodCliente", SqlDbType.VarChar).Value = objClienteContacto.CodCliente;
                                 cmd.Parameters.Add("@NomConCliente", SqlDbType.VarChar).Value = objClienteContacto.NomConCliente;
                                 cmd.Parameters.Add("@ApellidoConCliente", SqlDbType.VarChar).Value = objClienteContacto.ApellidoConCliente;
                                 cmd.Parameters.Add("@FecNacConCliente", SqlDbType.DateTime).Value = objClienteContacto.FecNacConCliente;
@@ -162,7 +160,7 @@ namespace SIGA.DAO.Ventas
                                 cmd.Parameters.Add("@CorConCliente", SqlDbType.VarChar).Value = objClienteContacto.CorConCliente;
                                 cmd.Parameters.Add("@AreaConCliente", SqlDbType.VarChar).Value = objClienteContacto.AreaConCliente;
                                 cmd.Parameters.Add("@TeleConCliente", SqlDbType.VarChar).Value = objClienteContacto.TeleConCliente;
-                                cmd.Parameters.Add("@CodOperador", SqlDbType.TinyInt).Value =   objClienteContacto.CodOperador;
+                                cmd.Parameters.Add("@CodOperador", SqlDbType.TinyInt).Value = objClienteContacto.CodOperador;
                                 cmd.Parameters.Add("@CelConCliente1", SqlDbType.VarChar).Value = objClienteContacto.CelConCliente1;
                                 cmd.Parameters.Add("@CodOperador2", SqlDbType.TinyInt).Value = objClienteContacto.CodOperador2;
                                 cmd.Parameters.Add("@CelConCliente2", SqlDbType.VarChar).Value = objClienteContacto.CelConCliente2;

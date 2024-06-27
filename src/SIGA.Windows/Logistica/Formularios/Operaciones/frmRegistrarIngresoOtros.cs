@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -19,7 +15,8 @@ namespace SIGA.Windows.Logistica.Formularios.Operaciones
         private void frmRegistrarIngresoOtros_Load(object sender, EventArgs e)
         {
             CargaTipoDocumento();
-            CargaSede();
+            CargaAlmacenIngreso(1);
+            //CargaSede();
             btnNuevo.Enabled = false;
             btnGuardar.Enabled = true;
             btnImprimir.Enabled = false;
@@ -56,17 +53,17 @@ namespace SIGA.Windows.Logistica.Formularios.Operaciones
             cboEmpresa.ValueMember = "CodEmpresa";
             cboEmpresa.DisplayMember = "DesEmpresa";
 
-        }*/
+        }*/       
 
         private void CargaTipoCambio()
         {
-           /* SIGA.Business.Caja.TipoCambioBusiness obj = new SIGA.Business.Caja.TipoCambioBusiness();
-            var ResultHoy = obj.TipoCambioHoy();
+            /* SIGA.Business.Caja.TipoCambioBusiness obj = new SIGA.Business.Caja.TipoCambioBusiness();
+             var ResultHoy = obj.TipoCambioHoy();
 
-            if (ResultHoy.Rows.Count > 0)
-            {
-                txtTC.Text = ResultHoy.Rows[0][0].ToString();
-            }*/
+             if (ResultHoy.Rows.Count > 0)
+             {
+                 txtTC.Text = ResultHoy.Rows[0][0].ToString();
+             }*/
 
 
         }
@@ -104,11 +101,17 @@ namespace SIGA.Windows.Logistica.Formularios.Operaciones
 
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
         {
-            SIGA.Windows.Logistica.Formularios.Busquedas.frmBuscaProveedor objBusquedaProveedor = new SIGA.Windows.Logistica.Formularios.Busquedas.frmBuscaProveedor();
-            objBusquedaProveedor.ShowDialog();
-            txtCodigoProveedor.Text = objBusquedaProveedor.CodigoProveedor.ToString();
-            txtRazonSocial.Text = objBusquedaProveedor.RazonSocial.ToString();
-            txtRuc.Text = objBusquedaProveedor.Ruc.ToString();
+            //SIGA.Windows.Logistica.Formularios.Busquedas.frmBuscaProveedor objBusquedaProveedor = new SIGA.Windows.Logistica.Formularios.Busquedas.frmBuscaProveedor();
+            //objBusquedaProveedor.ShowDialog();
+            //txtCodigoProveedor.Text = objBusquedaProveedor.CodigoProveedor.ToString();
+            //txtRazonSocial.Text = objBusquedaProveedor.RazonSocial.ToString();
+            //txtRuc.Text = objBusquedaProveedor.Ruc.ToString();
+
+            SIGA.Windows.Comunes.frmProveedorBuscar objfrmProveedorBuscar = new SIGA.Windows.Comunes.frmProveedorBuscar();
+            objfrmProveedorBuscar.ShowDialog();
+            txtCodigoProveedor.Text = objfrmProveedorBuscar.CodigoProveedor;
+            txtRazonSocial.Text = objfrmProveedorBuscar.NombreProveedor.ToString();
+            txtRuc.Text = objfrmProveedorBuscar.Ruc;
         }
 
         private bool Validar()
@@ -116,7 +119,7 @@ namespace SIGA.Windows.Logistica.Formularios.Operaciones
             bool Validado = true;
             if (cboTipoDocumento.Text.Equals(string.Empty))
             {
-                Validado= false;
+                Validado = false;
                 return Validado;
             }
 
@@ -185,10 +188,10 @@ namespace SIGA.Windows.Logistica.Formularios.Operaciones
 
         }
 
-        private void IngresarItem(int CodigoDOcumento, int CodigoGeneral, string CodigoExterno, Int16 CodigoEmpresa, string Descripcion, Decimal Cantidad, decimal PrecioAnterior,Decimal Precio, Decimal Total, string NotaIngreso, string OC)
+        private void IngresarItem(int CodigoDOcumento, int CodigoGeneral, string CodigoExterno, Int16 CodigoEmpresa, string Descripcion, Decimal Cantidad, decimal PrecioAnterior, Decimal Precio, Decimal Total, string NotaIngreso, string OC)
         {
 
-            dgvItems.Rows.Insert(dgvItems.Rows.Count, CodigoDOcumento, CodigoGeneral, CodigoExterno, CodigoEmpresa, Descripcion, Cantidad,PrecioAnterior, Precio, Total, NotaIngreso, OC);
+            dgvItems.Rows.Insert(dgvItems.Rows.Count, CodigoDOcumento, CodigoGeneral, CodigoExterno, CodigoEmpresa, Descripcion, Cantidad, PrecioAnterior, Precio, Total, NotaIngreso, OC);
             dgvItems.Focus();
             //dgvItems.CurrentCell = dgvItems.Rows[dgvItems.Rows.Count - 1].Cells[0];
         }
@@ -250,9 +253,9 @@ namespace SIGA.Windows.Logistica.Formularios.Operaciones
 
                 Item.Cantidad = Convert.ToDecimal(row.Cells[5].Value);
 
-                Item.Precio = Math.Round(Convert.ToDecimal(row.Cells[7].Value),2);
+                Item.Precio = Math.Round(Convert.ToDecimal(row.Cells[7].Value), 2);
 
-                Item.Total = Math.Round(Convert.ToDecimal(row.Cells[8].Value),2);
+                Item.Total = Math.Round(Convert.ToDecimal(row.Cells[8].Value), 2);
 
                 Item.NumeroGuia = string.Empty;
                 Item.NumeroOrden = string.Empty;
@@ -268,7 +271,7 @@ namespace SIGA.Windows.Logistica.Formularios.Operaciones
         private string ObtenerCorreosEnvio()
         {
             StringBuilder correos = new StringBuilder();
-           
+
 
             return correos.ToString();
         }
@@ -304,12 +307,12 @@ namespace SIGA.Windows.Logistica.Formularios.Operaciones
             objDocumentoVenta.CodMoneda = Convert.ToInt16(cboMoneda.Text == "Soles" ? 1 : 2);
             //objDocumentoVenta.CodEmpresa = Convert.ToInt16(cboEmpresa.SelectedValue);
             objDocumentoVenta.CodigoEstado = 1;
-            objDocumentoVenta.SubTotal = Math.Round(Convert.ToDecimal(txtSubTotal.Text),2);
-            objDocumentoVenta.Impuesto = Math.Round(Convert.ToDecimal(txtIgv.Text),2);
+            objDocumentoVenta.SubTotal = Math.Round(Convert.ToDecimal(txtSubTotal.Text), 2);
+            objDocumentoVenta.Impuesto = Math.Round(Convert.ToDecimal(txtIgv.Text), 2);
 
-            objDocumentoVenta.Total = Math.Round(Convert.ToDecimal(txtTotal.Text),2);
+            objDocumentoVenta.Total = Math.Round(Convert.ToDecimal(txtTotal.Text), 2);
 
-            objDocumentoVenta.TipoCambio = Math.Round(Convert.ToDecimal(txtTC.Text),2);
+            objDocumentoVenta.TipoCambio = Math.Round(Convert.ToDecimal(txtTC.Text), 2);
             objDocumentoVenta.IncluyeIGV = Convert.ToBoolean(chkIGV.Checked);
             objDocumentoVenta.UsuarioCreacion = UsuarioLogeo.Codigo;
 
@@ -357,7 +360,7 @@ namespace SIGA.Windows.Logistica.Formularios.Operaciones
                 strMensaje.Append(cboMoneda.Text);
                 strMensaje.Append("");
 
-                strMensaje.Append(Math.Round(Convert.ToDecimal(txtTotal.Text),2));
+                strMensaje.Append(Math.Round(Convert.ToDecimal(txtTotal.Text), 2));
 
 
 
@@ -373,7 +376,7 @@ namespace SIGA.Windows.Logistica.Formularios.Operaciones
 
                 objEnvioCorreo.sbEnviar(strCorreos, "SIGA-DOCUMENTOS SIN ORDEN DE COMPRA", strMensaje.ToString(), null, null);
 
-            
+
             }
             else
             {
@@ -513,7 +516,7 @@ namespace SIGA.Windows.Logistica.Formularios.Operaciones
             txtIgv.Text = "0";
             txtTotal.Text = "0";
             CargaTipoCambio();
-           // CargaEmpresa();
+            // CargaEmpresa();
             cboMoneda.Text = "Soles";
             dgvItems.Rows.Clear();
             txtCodigoProveedor.Text = "0";
@@ -538,7 +541,7 @@ namespace SIGA.Windows.Logistica.Formularios.Operaciones
 
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
             }
@@ -572,7 +575,7 @@ namespace SIGA.Windows.Logistica.Formularios.Operaciones
 
         private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
-           
+
 
         }
 

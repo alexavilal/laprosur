@@ -1,11 +1,7 @@
 ﻿using SIGA.DAO.Comunes;
-using SIGA.Entities.Ventas;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 
 namespace SIGA.DAO.Seguridad
 {
@@ -13,7 +9,7 @@ namespace SIGA.DAO.Seguridad
     {
         private Conexion Conection = new Conexion();
 
-        public DataTable ConsultarParametros(int CodigoParametro, string Descripcion,Int16 CodEmpresa)
+        public DataTable ConsultarParametros(int CodigoParametro, string Descripcion, Int16 CodEmpresa)
         {
             DataTable dtParametro = new DataTable();
 

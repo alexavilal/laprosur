@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SIGA.DAO.Administrador;
 using SIGA.Entities.Administrador;
+using System;
+using System.Collections.Generic;
 using System.Data;
-using SIGA.DAO.Administrador;
 
 namespace SIGA.Business.Administrador
 {

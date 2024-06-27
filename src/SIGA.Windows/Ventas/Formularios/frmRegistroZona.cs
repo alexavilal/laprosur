@@ -1,16 +1,9 @@
-﻿using SIGA.Business.Administrador;
-using SIGA.Business.Ventas;
+﻿using SIGA.Business.Ventas;
 using SIGA.Entities.Administrador;
 using SIGA.Entities.Ventas;
-using SIGA.Windows.Administrador;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SIGA.Windows.Ventas.Formularios
@@ -44,8 +37,8 @@ namespace SIGA.Windows.Ventas.Formularios
 
             try
             {
-                
-                
+
+
                 objEntidad.Descripcion = TxtDescripcion.Text;
                 objEntidad.Usuario = 1;  // por definir, dato de prueba
                 objEntidad.Estado = Convert.ToString(cboEstado.SelectedValue).Substring(0, 1);
@@ -79,7 +72,7 @@ namespace SIGA.Windows.Ventas.Formularios
                 Modulo objEntidad = new Modulo();
                 objEntidad.CodigoModulo = CodigoEdicion;
                 objEntidad.DescripcionModulo = TxtDescripcion.Text;
-                objEntidad.EstadoModulo = Convert.ToString(cboEstado.SelectedValue).Substring(0,1);
+                objEntidad.EstadoModulo = Convert.ToString(cboEstado.SelectedValue).Substring(0, 1);
                 objEntidad.UsuModifica = UsuarioLogeo.Codigo;  // por definir, dato de prueba
                 Codigo = objDocumentoBussiness.ActualizarModulo(objEntidad);
 

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using SIGA.Business.Logistica;
+﻿using SIGA.Business.Logistica;
 using SIGA.Entities.Logistica;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
 {
@@ -126,7 +121,7 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos
         void ListarSedes()
         {
             SedeBusiness objBusiness = new SedeBusiness();
-            Sede objSedes= new Sede();
+            Sede objSedes = new Sede();
             objSedes.CodSede = 0;
             objSedes.DesSede = string.Empty;
             objSedes.DirSede = string.Empty;

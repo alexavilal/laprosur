@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using SIGA.Business.Administrador;
+﻿using SIGA.Business.Administrador;
 using SIGA.Entities.Administrador;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace SIGA.Windows.Administrador
-{ 
+{
     public partial class FrmMantenimientoOpciones : Form
     {
         public FrmMantenimientoOpciones()
@@ -102,8 +98,8 @@ namespace SIGA.Windows.Administrador
             Opcion objUsuario = new Opcion();
             objUsuario.CodModulo = Convert.ToInt16(CboModulo.SelectedValue);
             objUsuario.DesOpcion = TxtDescripcion.Text;
-            objUsuario.CodOpcion = string.IsNullOrEmpty(TxtCodigo.Text) ? Convert.ToInt16(0) : Convert.ToInt16(TxtCodigo.Text); 
-            objUsuario.EstCodigo = Convert.ToString(CboEstado.SelectedValue);             
+            objUsuario.CodOpcion = string.IsNullOrEmpty(TxtCodigo.Text) ? Convert.ToInt16(0) : Convert.ToInt16(TxtCodigo.Text);
+            objUsuario.EstCodigo = Convert.ToString(CboEstado.SelectedValue);
 
             this.DgvOpciones.DataSource = objBusiness.ObtenerOpciones(objUsuario);
             this.DgvOpciones.Refresh();
@@ -118,10 +114,10 @@ namespace SIGA.Windows.Administrador
             DgvOpciones.MultiSelect = false;
 
             DgvOpciones.AutoGenerateColumns = false;
-            DgvOpciones.ColumnCount =4;
+            DgvOpciones.ColumnCount = 4;
 
             DgvOpciones.Columns[0].HeaderText = "Codigo";
-            DgvOpciones.Columns[0].Name = "CodOpcion";            
+            DgvOpciones.Columns[0].Name = "CodOpcion";
             DgvOpciones.Columns[0].DataPropertyName = "CodOpcion";
             DgvOpciones.Columns[0].Width = 100;
 

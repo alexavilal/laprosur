@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SIGA.Entities.Logistica
 {
@@ -27,6 +24,6 @@ namespace SIGA.Entities.Logistica
         public Int16 CodigoAlmacen { get; set; }
 
 
-         
+
     }
 }

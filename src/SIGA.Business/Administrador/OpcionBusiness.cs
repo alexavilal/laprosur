@@ -1,7 +1,7 @@
 ﻿
-using System.Collections.Generic;
-using SIGA.Entities.Administrador;
 using SIGA.DAO.Administrador;
+using SIGA.Entities.Administrador;
+using System.Collections.Generic;
 using System.Data;
 
 namespace SIGA.Business.Administrador
@@ -24,14 +24,14 @@ namespace SIGA.Business.Administrador
             return Codigo;
         }
 
-     
 
-        public int ActualizarOpcion(Opcion objOpcion )
-        
+
+        public int ActualizarOpcion(Opcion objOpcion)
+
         {
             int Codigo = 0;
             OpcionDao _GeneralRepository = new OpcionDao();
-            Codigo = _GeneralRepository.ActualizarOpcion(objOpcion );
+            Codigo = _GeneralRepository.ActualizarOpcion(objOpcion);
             return Codigo;
         }
 
@@ -48,7 +48,7 @@ namespace SIGA.Business.Administrador
         }
 
 
-       
+
 
     }
 }

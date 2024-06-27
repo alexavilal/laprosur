@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using SIGA.DAO.Comunes;
 using SIGA.Entities.Logistica;
-using System.Data.SqlClient;
-using System.Data.Common;
+using System;
+using System.Collections.Generic;
 using System.Data;
-using SIGA.DAO.Comunes;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Logistica
 {
@@ -75,7 +72,7 @@ namespace SIGA.DAO.Logistica
         }
 
 
-        public DataTable ListarMarcaCriterio(Int16? CodMarca ,string Descripcion,string Estado)
+        public DataTable ListarMarcaCriterio(Int16? CodMarca, string Descripcion, string Estado)
         {
             DataTable dt = new DataTable();
 
@@ -83,13 +80,13 @@ namespace SIGA.DAO.Logistica
             string Connection = @"Data Source=192.168.0.4;Initial Catalog=SIGA;User id=sa;pwd=123456";
 
 
-           using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))
+            using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))
             {
                 using (SqlCommand cmd = new SqlCommand("USP_ListarMarcaCriterio", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@CodMarca", SqlDbType.SmallInt).Value = CodMarca;
-                    cmd.Parameters.Add("@DesMarca", SqlDbType.VarChar).Value =Descripcion;
+                    cmd.Parameters.Add("@DesMarca", SqlDbType.VarChar).Value = Descripcion;
                     cmd.Parameters.Add("@EstCodigo", SqlDbType.Char).Value = Estado;
 
                     con.Open();
@@ -150,7 +147,7 @@ namespace SIGA.DAO.Logistica
             {
                 con.Open();
 
-         
+
 
                 try
                 {
@@ -163,11 +160,11 @@ namespace SIGA.DAO.Logistica
                             cmd.Parameters.Add("@DesMarca", SqlDbType.VarChar).Value = objPerfil.DesMarca;
                             cmd.Parameters.Add("@EstCodigo", SqlDbType.Char).Value = objPerfil.Estado;
                             cmd.Parameters.Add("@UsuCreCodigo", SqlDbType.SmallInt).Value = objPerfil.UsuCreCodigo;
-                           
-                          
+
+
                             cmd.ExecuteNonQuery();
 
-                           
+
                         }
                     }
                 }
@@ -189,13 +186,13 @@ namespace SIGA.DAO.Logistica
             string Connection = @"Data Source=192.168.0.4;Initial Catalog=SIGA;User id=sa;pwd=123456";
 
 
-           using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))
+            using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))
             {
                 using (SqlCommand cmd = new SqlCommand("USP_MarcaPorCodigo", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@CodMarca", SqlDbType.SmallInt).Value = CodigoMarca;
-                   
+
 
                     con.Open();
                     dt.Load(cmd.ExecuteReader());
@@ -221,7 +218,7 @@ namespace SIGA.DAO.Logistica
                 using (SqlCommand cmd = new SqlCommand("USP_ConsultarMarcas", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                   
+
 
 
                     con.Open();
@@ -234,5 +231,5 @@ namespace SIGA.DAO.Logistica
 
 
         }
-    } 
+    }
 }

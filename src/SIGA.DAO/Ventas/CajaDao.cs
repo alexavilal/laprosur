@@ -1,13 +1,7 @@
-﻿using SIGA.Entities.Ventas;
+﻿using SIGA.DAO.Comunes;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
-using SIGA.DAO.Comunes;
 
 namespace SIGA.DAO.Ventas
 {
@@ -174,7 +168,7 @@ namespace SIGA.DAO.Ventas
             DataTable dt = new DataTable();
 
 
-           
+
 
             using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))
             {
@@ -182,7 +176,7 @@ namespace SIGA.DAO.Ventas
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@CodCaja", SqlDbType.Int).Value = Codigo;
-                   
+
                     con.Open();
                     dt.Load(cmd.ExecuteReader());
 
@@ -193,7 +187,7 @@ namespace SIGA.DAO.Ventas
 
         }
 
-        public DataTable ConsultarCajasActivas(int CodigoUsuario,string Fecha,int TipoCaja)
+        public DataTable ConsultarCajasActivas(int CodigoUsuario, string Fecha, int TipoCaja)
         {
             DataTable dt = new DataTable();
 
@@ -220,7 +214,7 @@ namespace SIGA.DAO.Ventas
 
         }
 
-        public DataTable ConsultarCajasAdministrativaActiva(int CodSede,string Fecha)
+        public DataTable ConsultarCajasAdministrativaActiva(int CodSede, string Fecha)
         {
             DataTable dt = new DataTable();
 

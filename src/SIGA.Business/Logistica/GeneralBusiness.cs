@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.DAO.Logistica;
+﻿using SIGA.DAO.Logistica;
 using SIGA.Entities.Logistica;
+using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace SIGA.Business.Logistica
@@ -11,23 +9,23 @@ namespace SIGA.Business.Logistica
     public class GeneralBusiness
     {
 
-          public DataTable ConsultaGeneral(int CodigoGeneral)
+        public DataTable ConsultaGeneral(int CodigoGeneral)
         {
             GeneralDao _GeneralRepository = new GeneralDao();
             var lstResult = _GeneralRepository.ConsultarGeneral(CodigoGeneral);
             return lstResult;
         }
 
-          public DataTable ConsultarMantenimiento(int CodigoSeccion, short CodigoEmpresa, short CodigoMarca, short CodigoMaterial, short CodigoFamilia, short CodigoSubFamilia, short CodigoColor, short CodigoCapacidad, short CodigoForma, short CodigoUnidad, short CodigoEmpaque, string Descripcion, string Estado, short CodigoClasificacion, string CodigoExterno,string Ventas)
-          {
-              return new GeneralDao().ConsultarMantenimiento(CodigoEmpresa, CodigoMarca, CodigoMaterial, CodigoFamilia, CodigoSubFamilia, CodigoColor, CodigoCapacidad, CodigoForma, CodigoUnidad, CodigoEmpaque, Descripcion, Estado, CodigoClasificacion, CodigoExterno, CodigoSeccion,Ventas);
-          }
+        public DataTable ConsultarMantenimiento(int CodigoSeccion, short CodigoEmpresa, short CodigoMarca, short CodigoMaterial, short CodigoFamilia, short CodigoSubFamilia, short CodigoColor, short CodigoCapacidad, short CodigoForma, short CodigoUnidad, short CodigoEmpaque, string Descripcion, string Estado, short CodigoClasificacion, string CodigoExterno, string Ventas)
+        {
+            return new GeneralDao().ConsultarMantenimiento(CodigoEmpresa, CodigoMarca, CodigoMaterial, CodigoFamilia, CodigoSubFamilia, CodigoColor, CodigoCapacidad, CodigoForma, CodigoUnidad, CodigoEmpaque, Descripcion, Estado, CodigoClasificacion, CodigoExterno, CodigoSeccion, Ventas);
+        }
 
-        public DataTable ConsultaParaKardex(int CodigoMarca,string Codigo,string Descripcion)
+        public DataTable ConsultaParaKardex(int CodigoMarca, string Codigo, string Descripcion)
         {
 
             GeneralDao _GeneralRepository = new GeneralDao();
-            var result = _GeneralRepository.ConsultarParaKardex(CodigoMarca,Codigo,Descripcion);
+            var result = _GeneralRepository.ConsultarParaKardex(CodigoMarca, Codigo, Descripcion);
             return result;
 
         }
@@ -42,9 +40,9 @@ namespace SIGA.Business.Logistica
         {
             int Codigo = 0;
             GeneralDao _GeneralRepository = new GeneralDao();
-           Codigo = _GeneralRepository.Registrar(request, ref CodigoArticulo);
+            Codigo = _GeneralRepository.Registrar(request, ref CodigoArticulo);
 
-           // Codigo = _GeneralRepository.Registrar(request);
+            // Codigo = _GeneralRepository.Registrar(request);
 
             return Codigo;
         }
@@ -84,7 +82,7 @@ namespace SIGA.Business.Logistica
 
         }
 
-        public DataTable PrecioConsulta(Int16 CodigoEmpresa,Int16 CodigoMarca,string Codigo,string Descripcion)
+        public DataTable PrecioConsulta(Int16 CodigoEmpresa, Int16 CodigoMarca, string Codigo, string Descripcion)
         {
 
             GeneralDao _GeneralRepository = new GeneralDao();
@@ -104,7 +102,7 @@ namespace SIGA.Business.Logistica
             return _GeneralRepository.ActualizarPrecios(CodigoGeneral, PrecioPromedio, PrecioEmpresa, CodigoUsuario);
         }
 
-        public List<General> ConsultarPorDescripcionPrecio(string Descripcion,string Codigo,int Marca)
+        public List<General> ConsultarPorDescripcionPrecio(string Descripcion, string Codigo, int Marca)
         {
             GeneralDao _GeneralRepository = new GeneralDao();
             var result = _GeneralRepository.ConsultarPorDescripcionPrecio(Descripcion, Codigo, Marca);

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using SIGA.DAO.Comunes;
 using SIGA.Entities.Logistica;
-using System.Data.SqlClient;
-using System.Data.Common;
+using System;
+using System.Collections.Generic;
 using System.Data;
-using SIGA.DAO.Comunes;
+using System.Data.SqlClient;
 
 
 namespace SIGA.DAO.Logistica
@@ -23,7 +20,7 @@ namespace SIGA.DAO.Logistica
 
             //string Connection = @"Data Source=192.168.0.4;Initial Catalog=SIGA;User id=sa;pwd=123456";
 
-           using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))
+            using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))
             {
                 using (SqlCommand cmd = new SqlCommand("USP_UnidadMedidaConsultar", con))
                 {
@@ -195,7 +192,7 @@ namespace SIGA.DAO.Logistica
             return ItemResult;
         }
 
-        
+
 
     }
 }

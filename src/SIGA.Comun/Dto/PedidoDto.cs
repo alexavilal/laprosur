@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace SIGA.Comun.Dto
+﻿namespace SIGA.Comun.Dto
 {
     public class PedidoDto
     {
@@ -24,6 +19,6 @@ namespace SIGA.Comun.Dto
         public string Direccion { get; set; }
         public string Correo { get; set; }
         public int CodigoEstado { get; set; }
-        
+
     }
 }

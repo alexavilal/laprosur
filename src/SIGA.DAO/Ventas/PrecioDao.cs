@@ -1,10 +1,9 @@
-﻿using System;
+﻿using SIGA.DAO.Comunes;
+using SIGA.Entities.Ventas;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using SIGA.DAO.Comunes;
-using SIGA.Entities.Administrador;
-using SIGA.Entities.Ventas;
 
 namespace SIGA.DAO.Ventas
 {
@@ -63,7 +62,7 @@ namespace SIGA.DAO.Ventas
             return Exito;
         }
 
-        public DataTable DevuelvePrecioPorItem(int CodGeneral,int CodPolitica, int CodZona)
+        public DataTable DevuelvePrecioPorItem(int CodGeneral, int CodPolitica, int CodZona)
         {
             DataTable dtPrecio = new DataTable();
 
@@ -98,7 +97,7 @@ namespace SIGA.DAO.Ventas
         }
 
 
-        public DataTable DevuelvePrecio(int CodPolitica , int CodZona)
+        public DataTable DevuelvePrecio(int CodPolitica, int CodZona)
         {
             DataTable dtPrecio = new DataTable();
 
@@ -111,7 +110,7 @@ namespace SIGA.DAO.Ventas
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                     
+
                         cmd.Parameters.AddWithValue("@CodPolitica", CodPolitica);
                         cmd.Parameters.AddWithValue("@CodZona", CodZona);
 

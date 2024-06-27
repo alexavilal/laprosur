@@ -54,7 +54,7 @@
             // txtCodigoProveedor
             // 
             this.txtCodigoProveedor.Location = new System.Drawing.Point(1084, 25);
-            this.txtCodigoProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigoProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigoProveedor.Name = "txtCodigoProveedor";
             this.txtCodigoProveedor.Size = new System.Drawing.Size(75, 22);
             this.txtCodigoProveedor.TabIndex = 20;
@@ -66,7 +66,7 @@
             this.chkTodos.Checked = true;
             this.chkTodos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkTodos.Location = new System.Drawing.Point(144, 63);
-            this.chkTodos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkTodos.Margin = new System.Windows.Forms.Padding(4);
             this.chkTodos.Name = "chkTodos";
             this.chkTodos.Size = new System.Drawing.Size(69, 20);
             this.chkTodos.TabIndex = 4;
@@ -77,7 +77,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(943, 59);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(49, 32);
             this.button3.TabIndex = 3;
@@ -88,7 +88,7 @@
             // txtRazonSocial
             // 
             this.txtRazonSocial.Location = new System.Drawing.Point(251, 59);
-            this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(4);
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(641, 22);
             this.txtRazonSocial.TabIndex = 5;
@@ -96,7 +96,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(381, 587);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 38);
             this.button1.TabIndex = 29;
@@ -117,7 +117,7 @@
             // btnConsultar
             // 
             this.btnConsultar.Location = new System.Drawing.Point(1084, 116);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(129, 38);
             this.btnConsultar.TabIndex = 9;
@@ -129,7 +129,7 @@
             // 
             this.dtpAl.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpAl.Location = new System.Drawing.Point(388, 22);
-            this.dtpAl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpAl.Margin = new System.Windows.Forms.Padding(4);
             this.dtpAl.Name = "dtpAl";
             this.dtpAl.Size = new System.Drawing.Size(168, 22);
             this.dtpAl.TabIndex = 2;
@@ -148,7 +148,7 @@
             // 
             this.dtpDel.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDel.Location = new System.Drawing.Point(144, 21);
-            this.dtpDel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDel.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDel.Name = "dtpDel";
             this.dtpDel.Size = new System.Drawing.Size(168, 22);
             this.dtpDel.TabIndex = 1;
@@ -156,7 +156,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(648, 587);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(129, 38);
             this.button2.TabIndex = 30;
@@ -179,9 +179,9 @@
             this.groupBox1.Controls.Add(this.dtpDel);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(15, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1425, 182);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
@@ -200,7 +200,7 @@
             // 
             this.cboAlmacen.FormattingEnabled = true;
             this.cboAlmacen.Location = new System.Drawing.Point(144, 99);
-            this.cboAlmacen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboAlmacen.Margin = new System.Windows.Forms.Padding(4);
             this.cboAlmacen.Name = "cboAlmacen";
             this.cboAlmacen.Size = new System.Drawing.Size(227, 24);
             this.cboAlmacen.TabIndex = 71;
@@ -220,7 +220,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(13, 219);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1596, 342);
@@ -229,7 +229,7 @@
             // btnVerDetalle
             // 
             this.btnVerDetalle.Location = new System.Drawing.Point(649, 587);
-            this.btnVerDetalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVerDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerDetalle.Name = "btnVerDetalle";
             this.btnVerDetalle.Size = new System.Drawing.Size(129, 38);
             this.btnVerDetalle.TabIndex = 32;
@@ -241,7 +241,7 @@
             // btnImprimir
             // 
             this.btnImprimir.Location = new System.Drawing.Point(512, 587);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(4);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(129, 38);
             this.btnImprimir.TabIndex = 33;
@@ -253,7 +253,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(785, 587);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(148, 38);
             this.button4.TabIndex = 34;
@@ -273,10 +273,10 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMantenimientoOtrosIngresos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SIGA-";
+            this.Text = "SIGA-Nota de Ingreso";
             this.Load += new System.EventHandler(this.frmMantenimientoOtrosIngresos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

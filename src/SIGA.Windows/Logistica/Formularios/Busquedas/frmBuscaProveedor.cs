@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace SIGA.Windows.Logistica.Formularios.Busquedas
@@ -20,11 +15,11 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas
             InitializeComponent();
         }
 
-        private void BuscarProveedor(string strRazonSocial,string strNombreComercial,Int16 TipoDocumento,string strNumeroDocumento,string Comercial)
+        private void BuscarProveedor(string strRazonSocial, string strNombreComercial, Int16 TipoDocumento, string strNumeroDocumento, string Comercial)
         {
             SIGA.Business.Logistica.ProveedorBusiness objProveedorBusiness = new SIGA.Business.Logistica.ProveedorBusiness();
 
-            var result = objProveedorBusiness.BuscarPorCriteriosDT(strRazonSocial, strNombreComercial, TipoDocumento, strNumeroDocumento,Comercial);
+            var result = objProveedorBusiness.BuscarPorCriteriosDT(strRazonSocial, strNombreComercial, TipoDocumento, strNumeroDocumento, Comercial);
 
             dgvProveedor.DataSource = result;
             dgvProveedor.Columns[0].Visible = false;
@@ -33,20 +28,20 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas
 
         private void txtRazonSocial_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void txtNombreComercial_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void txtNumero_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
-      
+
 
         private void dgvProveedor_CellDoubleClick(System.Object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
         {
@@ -68,7 +63,7 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas
 
             }
 
-          
+
         }
 
 
@@ -81,7 +76,7 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas
 
             var resutlMarca = objDocumentoBussiness.ListarTipoDocumentoIdentidad();
 
-            
+
 
             foreach (var item in resutlMarca)
             {
@@ -96,7 +91,7 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas
         }
 
 
-         
+
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -105,7 +100,7 @@ namespace SIGA.Windows.Logistica.Formularios.Busquedas
 
         private void btnOkey_Click(object sender, EventArgs e)
         {
-            BuscarProveedor(txtRazonSocial.Text,txtNombreComercial.Text, Convert.ToInt16(cboTipoDocumento.SelectedValue), txtNumero.Text,txtMarca.Text);
+            BuscarProveedor(txtRazonSocial.Text, txtNombreComercial.Text, Convert.ToInt16(cboTipoDocumento.SelectedValue), txtNumero.Text, txtMarca.Text);
         }
 
         private void frmBuscaProveedor_Load(object sender, EventArgs e)

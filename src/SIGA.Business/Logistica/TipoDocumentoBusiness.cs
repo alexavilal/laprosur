@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.DAO.Logistica;
+﻿using SIGA.DAO.Logistica;
 using SIGA.Entities.Logistica;
+using System.Collections.Generic;
 namespace SIGA.Business.Logistica
 {
     public class TipoDocumentoBusiness
@@ -16,8 +13,8 @@ namespace SIGA.Business.Logistica
             var lstResult = _ParametroRepository.Listar();
             return lstResult;
         }
-    
-    
+
+
     }
 
 }

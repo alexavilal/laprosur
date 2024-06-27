@@ -1,13 +1,12 @@
-﻿using System;
+﻿using SIGA.Business.Administrador;
+using SIGA.Entities.Administrador;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
-using SIGA.Business.Administrador;
-using SIGA.Entities.Administrador;
 using System.Text.RegularExpressions;
-using System.CodeDom;
+using System.Windows.Forms;
 
 namespace SIGA.Windows.Administrador
 {
@@ -90,7 +89,7 @@ namespace SIGA.Windows.Administrador
 
             if (CodigoEdicion.Equals(0))
             {
-                CboEstado.Enabled = false;               
+                CboEstado.Enabled = false;
             }
             else
             {
@@ -98,7 +97,7 @@ namespace SIGA.Windows.Administrador
                 BuscarPerfilesPorCodigo(CodigoEdicion);
                 ObtenerDatos();
             }
-            
+
             BuscarPerfiles();
             TxtAp.Focus();
 
@@ -152,7 +151,7 @@ namespace SIGA.Windows.Administrador
                 }
 
                 ObtenerListaPerfilesCheck();
-                
+
                 Codigo = objDocumentoBussiness.RegistrarUsuario(objEntidad, ListaPerfilUsuario);
 
                 if (Codigo > 0)
@@ -179,17 +178,17 @@ namespace SIGA.Windows.Administrador
             int ChekList = 0;
 
             foreach (DataGridViewRow row in DgvPerfiles.Rows)
-            { 
+            {
                 if (Convert.ToBoolean(row.Cells["chkSel"].Value) == true)
                 {
                     ChekList++;
-                } 
+                }
             }
 
             return ChekList;
         }
-                
-        void ObtenerListaPerfilesCheck() 
+
+        void ObtenerListaPerfilesCheck()
         {
             ListaPerfilUsuario = new List<PerfilUsuario>();
 
@@ -209,11 +208,11 @@ namespace SIGA.Windows.Administrador
         private void Actualizar()
         {
             try
-            {    
+            {
                 int Codigo = 0;
                 UsuarioBusiness objDocumentoBussiness = new UsuarioBusiness();
                 SIGA.Entities.Administrador.Usuario objEntidad = new SIGA.Entities.Administrador.Usuario();
-                             
+
                 objEntidad.CodigoUsuario = CodigoEdicion;
                 objEntidad.ApellidoPaterno = TxtAp.Text;
                 objEntidad.ApellidoMaterno = TxtAm.Text;
@@ -236,7 +235,7 @@ namespace SIGA.Windows.Administrador
                     }
 
                 }
-               
+
                 if (!validarEmail(TxtCorreo.Text.Trim()))
                 {
                     MessageBox.Show("El correo ingresado no es valido", "SIGA");
@@ -285,7 +284,7 @@ namespace SIGA.Windows.Administrador
             TxtNombre.Text = consulta.Nombre;
             TxtUsuario.Text = consulta.IdentificadorUsuario;
             TxtClave.Text = consulta.Clave;
-            TxtCorreo.Text = consulta.CorreoElectronico;            
+            TxtCorreo.Text = consulta.CorreoElectronico;
             CboEstado.SelectedValue = consulta.CodigoEstadoUsuario;
             lblClave.Text = consulta.Clave;
             cboTipoDocumento.SelectedValue = consulta.CodTipoDocumento;
@@ -296,7 +295,7 @@ namespace SIGA.Windows.Administrador
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-             this.Close();
+            this.Close();
         }
 
 
@@ -328,7 +327,7 @@ namespace SIGA.Windows.Administrador
             DgvPerfiles.MultiSelect = false;
 
             DgvPerfiles.AutoGenerateColumns = false;
-            DgvPerfiles.ColumnCount =2;
+            DgvPerfiles.ColumnCount = 2;
 
             DgvPerfiles.Columns[0].Name = "Perfil";
             DgvPerfiles.Columns[0].HeaderText = "DesPerfil";
@@ -340,8 +339,8 @@ namespace SIGA.Windows.Administrador
             DgvPerfiles.Columns[1].HeaderText = "CodPerfil";
             DgvPerfiles.Columns[1].DataPropertyName = "CodPerfil";
             DgvPerfiles.Columns[1].Width = 100;
-            DgvPerfiles.Columns[1].Visible = false ;
-                       
+            DgvPerfiles.Columns[1].Visible = false;
+
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             DgvPerfiles.Columns.Add(chk);
             chk.HeaderText = "Seleccionar";
@@ -355,7 +354,7 @@ namespace SIGA.Windows.Administrador
             PerfilBusiness objBusiness = new PerfilBusiness();
             PerfilUsuario objModulo = new PerfilUsuario();
             objModulo.UsuCodigo = Convert.ToInt16(0);
-            this.DgvPerfiles.DataSource = objBusiness.ObtenerPerfilesUsuarioPorCodigo(objModulo);            
+            this.DgvPerfiles.DataSource = objBusiness.ObtenerPerfilesUsuarioPorCodigo(objModulo);
         }
 
         public void BuscarPerfilesPorCodigo(int UsuCodigo)
@@ -390,7 +389,7 @@ namespace SIGA.Windows.Administrador
                     }
                 }
             }
-        } 
-          
+        }
+
     }
 }

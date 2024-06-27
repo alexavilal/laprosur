@@ -1,24 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.DAO.Comunes;
+﻿using SIGA.DAO.Comunes;
 using SIGA.Entities.Administrador;
-using System.Data.SqlClient;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Seguridad
 {
-    public  class OpcionDao
+    public class OpcionDao
     {
         private Conexion Conection = new Conexion();
 
         public DataTable ObtenerUsuariosPorOpcion(int CodigoOpcion)
         {
             DataTable dt = new DataTable();
-           
 
-           using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))
+
+            using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))
             {
                 using (SqlCommand cmd = new SqlCommand("USP_UsuariosPorOpcion", con))
                 {
@@ -42,7 +40,7 @@ namespace SIGA.DAO.Seguridad
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@CodOpcion", SqlDbType.SmallInt).Value = objOpcion.CodOpcion;
                     cmd.Parameters.Add("@CodModulo", SqlDbType.SmallInt).Value = objOpcion.CodModulo;
-                    cmd.Parameters.Add("@DesOpcion", SqlDbType.VarChar).Value = objOpcion.DesOpcion;                    
+                    cmd.Parameters.Add("@DesOpcion", SqlDbType.VarChar).Value = objOpcion.DesOpcion;
                     cmd.Parameters.Add("@EstCodigo", SqlDbType.Char).Value = objOpcion.EstCodigo;
 
                     con.Open();
@@ -85,7 +83,7 @@ namespace SIGA.DAO.Seguridad
                             cmd.Parameters.Add("@DesOpcion", SqlDbType.VarChar).Value = objOpcion.DesOpcion;
                             cmd.Parameters.Add("@RutOpcion", SqlDbType.VarChar).Value = objOpcion.RutOpcion;
                             cmd.Parameters.Add("@UsuCre", SqlDbType.SmallInt).Value = objOpcion.UsuCre;
-                          
+
 
                             SqlParameter parm2 = new SqlParameter("@Resultado", SqlDbType.Int);
                             parm2.Size = 7;
@@ -129,7 +127,7 @@ namespace SIGA.DAO.Seguridad
                             cmd.Parameters.Add("@RutOpcion", SqlDbType.VarChar).Value = objOpcion.RutOpcion;
                             cmd.Parameters.Add("@EstCodigo", SqlDbType.Char).Value = objOpcion.EstCodigo;
                             cmd.Parameters.Add("@UsuMod", SqlDbType.SmallInt).Value = objOpcion.UsuMod;
-                             
+
                             SqlParameter parm2 = new SqlParameter("@Resultado", SqlDbType.Int);
                             parm2.Size = 7;
                             parm2.Direction = ParameterDirection.Output;
@@ -171,7 +169,7 @@ namespace SIGA.DAO.Seguridad
                             ItemResult.CodModulo = Convert.ToInt16(dr.GetValue(1));
                             ItemResult.DesOpcion = Convert.ToString(dr.GetValue(2));
                             ItemResult.RutOpcion = Convert.ToString(dr.GetValue(3));
-                            ItemResult.EstCodigo = Convert.ToString(dr.GetValue(4));                        
+                            ItemResult.EstCodigo = Convert.ToString(dr.GetValue(4));
                         }
                     }
                 }

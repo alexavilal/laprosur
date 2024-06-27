@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿//using SIGA.Entities.Seguridad;
+using SIGA.Business.Administrador;
 //using SIGA.Business.Seguridad;
 using SIGA.Business.Logistica;
 using SIGA.Business.Ventas;
-using SIGA.Entities.Ventas;
 using SIGA.Entities.Logistica;
-//using SIGA.Entities.Seguridad;
-using SIGA.Comun;
-using SIGA.Business.Administrador;
-using System.Runtime.InteropServices;
+using SIGA.Entities.Ventas;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace SIGA.Windows.Ventas.Formularios
 {
@@ -29,7 +24,7 @@ namespace SIGA.Windows.Ventas.Formularios
             this.BackColor = Color.FromArgb(173, 216, 230);
         }
 
-       
+
         void CargarTipoDocIdentidad()
         {
             TipoDocumentoIdentidadBusiness objDocumentoBussiness = new TipoDocumentoIdentidadBusiness();
@@ -49,7 +44,7 @@ namespace SIGA.Windows.Ventas.Formularios
             cboTipoDocumento.DisplayMember = "DesDocumento";
         }
 
-       
+
 
         void CargarEstado()
         {
@@ -65,7 +60,7 @@ namespace SIGA.Windows.Ventas.Formularios
             cboEstado.ValueMember = "Key";
         }
 
-       
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(CodigoEdicion))
@@ -87,7 +82,7 @@ namespace SIGA.Windows.Ventas.Formularios
             }
         }
 
-        
+
         private bool ValidarDatos()
         {
             bool esValido = true;
@@ -428,7 +423,7 @@ namespace SIGA.Windows.Ventas.Formularios
                 return;
             }
 
-            
+
             cargarListaContactos();
         }
 
@@ -442,7 +437,7 @@ namespace SIGA.Windows.Ventas.Formularios
         {
             if (dgvContactos.RowCount > 0)
             {
-              
+
             }
         }
 
@@ -630,7 +625,7 @@ namespace SIGA.Windows.Ventas.Formularios
             {
                 var consulta = objCliente.BuscarPorTipoDocumento(TipoDocumento, txtNumero.Text).SingleOrDefault();
 
-                if (consulta!=null)
+                if (consulta != null)
                 {
                     CodigoEdicion = consulta.CodCliente.ToString();
                     TxtCodigoGenerado.Text = consulta.CodCliente.ToString();
@@ -688,9 +683,9 @@ namespace SIGA.Windows.Ventas.Formularios
                 }
 
 
-                
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
 

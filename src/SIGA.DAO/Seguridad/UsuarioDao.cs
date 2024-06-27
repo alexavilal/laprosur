@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.SqlClient;
+﻿using SIGA.DAO.Comunes;
 using SIGA.Entities.Seguridad;
-using SIGA.DAO.Comunes;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Seguridad
 {
@@ -94,12 +92,12 @@ namespace SIGA.DAO.Seguridad
                             foreach (var item in ListaPerfilUsuario)
                             {
                                 PerfilUsuario objPerfilUsuario = new PerfilUsuario();
-                                objPerfilUsuario.UsuCodigo = Convert.ToInt16 ( DocumentoGenerado);
+                                objPerfilUsuario.UsuCodigo = Convert.ToInt16(DocumentoGenerado);
                                 objPerfilUsuario.CodPerfil = item.CodPerfil;
                                 objPerfilUsuario.UsuCreacion = item.UsuCreacion;
                                 RegistrarPerfilUsuario(objPerfilUsuario);
                             }
-                        }           
+                        }
 
                         tran.Commit();
                     }
@@ -133,7 +131,7 @@ namespace SIGA.DAO.Seguridad
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.Add("@UsuCodigo", SqlDbType.SmallInt).Value = objPerfilUsuario.UsuCodigo;
                             cmd.Parameters.Add("@CodPerfil", SqlDbType.SmallInt).Value = objPerfilUsuario.CodPerfil;
-                            cmd.Parameters.Add("@UsuCreCodigo", SqlDbType.SmallInt).Value = objPerfilUsuario.UsuCreacion ;
+                            cmd.Parameters.Add("@UsuCreCodigo", SqlDbType.SmallInt).Value = objPerfilUsuario.UsuCreacion;
                             SqlParameter parm2 = new SqlParameter("@Resultado", SqlDbType.Int);
                             parm2.Size = 7;
                             parm2.Direction = ParameterDirection.Output;
@@ -196,7 +194,7 @@ namespace SIGA.DAO.Seguridad
 
                         if (ListaPerfilUsuario != null)
                         {
-                            if (ListaPerfilUsuario.Count>0)
+                            if (ListaPerfilUsuario.Count > 0)
                             {
                                 EliminarPerfilUsuario(objUsuario.CodigoUsuario);
 
@@ -235,7 +233,7 @@ namespace SIGA.DAO.Seguridad
 
                 try
                 {
-                    
+
                     using (SqlCommand cmd = new SqlCommand("USP_PerfilUsuarioEliminar", con))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -248,7 +246,7 @@ namespace SIGA.DAO.Seguridad
 
                         DocumentoGenerado = Convert.ToInt32(cmd.Parameters["@Resultado"].Value);
                     }
-                     
+
                 }
 
                 catch (Exception ex)
@@ -313,7 +311,7 @@ namespace SIGA.DAO.Seguridad
                     {
                         if (dr.Read())
                         {
-                            NumRegistros = Convert.ToInt16(dr.GetValue(0));                         
+                            NumRegistros = Convert.ToInt16(dr.GetValue(0));
                         }
                     }
                 }
@@ -360,7 +358,7 @@ namespace SIGA.DAO.Seguridad
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@UsuCodigo", SqlDbType.SmallInt).Value = objUsuario.CodigoUsuario;
                     cmd.Parameters.Add("@UsuLogin", SqlDbType.VarChar).Value = objUsuario.IdentificadorUsuario;
-                   
+
                     con.Open();
 
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -390,7 +388,7 @@ namespace SIGA.DAO.Seguridad
 
                     con.Open();
                     dtUsuario.Load(cmd.ExecuteReader());
-                }   
+                }
             }
 
             string conexion = Conection.cadenaConexion();
@@ -399,7 +397,7 @@ namespace SIGA.DAO.Seguridad
         }
 
 
-        public DataTable ObtenerPerfilesPorUsuario(Int16 Usuario,Int16 Perfil)
+        public DataTable ObtenerPerfilesPorUsuario(Int16 Usuario, Int16 Perfil)
         {
             DataTable dtUsuario = new DataTable();
             using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))

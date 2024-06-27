@@ -1,11 +1,8 @@
-﻿using System;
+﻿using SIGA.DAO.Ventas;
+using SIGA.Entities.Ventas;
+using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SIGA.DAO.Ventas;
-using SIGA.Entities.Ventas;
 
 namespace SIGA.Business.Ventas
 {
@@ -20,13 +17,13 @@ namespace SIGA.Business.Ventas
         public DataTable DevuelvePrecioPorItem(int CodGeneral, int CodPolitica, int CodZona)
         {
             PrecioDao objPrecioDao = new PrecioDao();
-            var result = objPrecioDao.DevuelvePrecioPorItem(CodGeneral,CodPolitica, CodZona);
+            var result = objPrecioDao.DevuelvePrecioPorItem(CodGeneral, CodPolitica, CodZona);
             return result;
         }
         public DataTable DevuelvePrecio(int CodPolitica, int CodZona)
         {
             PrecioDao objPrecioDao = new PrecioDao();
-            var result = objPrecioDao.DevuelvePrecio(CodPolitica,CodZona);
+            var result = objPrecioDao.DevuelvePrecio(CodPolitica, CodZona);
             return result;
         }
 

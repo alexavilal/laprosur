@@ -2,8 +2,8 @@
 using SIGA.Entities.Administrador;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Administrador
 {
@@ -20,7 +20,7 @@ namespace SIGA.DAO.Administrador
                 using (SqlCommand cmd = new SqlCommand("USP_ListaCargo", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                   
+
                     con.Open();
 
                     using (SqlDataReader dr = cmd.ExecuteReader())

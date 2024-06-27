@@ -2,12 +2,6 @@
 using SIGA.Entities.Logistica;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SIGA.Windows.Logistica.Formularios
@@ -58,7 +52,7 @@ namespace SIGA.Windows.Logistica.Formularios
                 entCotizacion.UsuCreCodigo = Convert.ToInt32(1);
                 entCotizacion.FecCre = dtFecha.Value;
                 entCotizacion.Req_Observacion = "";
-                
+
                 var Detalles = Lista();
 
                 var result = objCotizacion.Insertar(entCotizacion, Detalles);
@@ -66,7 +60,7 @@ namespace SIGA.Windows.Logistica.Formularios
                 if (result != null)
                 {
                     MessageBox.Show("Se ha registrado el requerimiento");
-                   
+
                     btnGuardar.Enabled = false;
                     btnAgregar.Enabled = false;
                     btnQuitar.Enabled = false;
@@ -177,7 +171,7 @@ namespace SIGA.Windows.Logistica.Formularios
             try
             {
                 QuitarItem();
-               
+
             }
             catch (Exception ex)
             {

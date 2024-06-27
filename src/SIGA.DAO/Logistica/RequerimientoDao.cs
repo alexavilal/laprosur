@@ -2,12 +2,8 @@
 using SIGA.Entities.Logistica;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SIGA.Entities.Ventas;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Logistica
 {
@@ -72,7 +68,7 @@ namespace SIGA.DAO.Logistica
                             command.Parameters.AddWithValue("@Req_EquipoMaquina", entRequerimiento.Req_EquipoMaquina);
                             command.Parameters.AddWithValue("@Req_Observacion", entRequerimiento.Req_Observacion);
 
-                            
+
                             command.Parameters.AddWithValue("@UsuCodigoSolicitante", entRequerimiento.UsuCodigoSolicitante);
                             command.Parameters.AddWithValue("@UsuCreCodigo", entRequerimiento.UsuCreCodigo);
 
@@ -82,13 +78,13 @@ namespace SIGA.DAO.Logistica
                             command.Parameters.Add(parm2);
 
 
-                          
+
 
                             // Abrir conexión y ejecutar el procedimiento almacenado
                             command.Transaction = tran as SqlTransaction;
 
                             int rowsAffected = command.ExecuteNonQuery();
-                            
+
                             if (rowsAffected > 0)
                             {
                                 // Si se insertaron filas, asignar valores de salida

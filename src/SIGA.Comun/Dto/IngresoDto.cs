@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SIGA.Comun.Dto
 {
@@ -18,7 +15,7 @@ namespace SIGA.Comun.Dto
         public Int16 CodigoAlmacenDestino { get; set; }
         public Int16 CodigoEstadoSalida { get; set; }
         public string Estado { get; set; }
-        
+
 
     }
 

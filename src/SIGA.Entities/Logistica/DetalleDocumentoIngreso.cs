@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SIGA.Entities.Logistica
 {
@@ -33,6 +30,6 @@ namespace SIGA.Entities.Logistica
         public decimal Faltante { get; set; }
         public int CodigoGuia { get; set; }
         public decimal? Precio { get; set; }
-        
+
     }
 }

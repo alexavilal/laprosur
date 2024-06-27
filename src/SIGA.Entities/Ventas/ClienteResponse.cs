@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SIGA.Entities.Ventas
 {
@@ -14,12 +11,12 @@ namespace SIGA.Entities.Ventas
         public string NomCliente { get; set; }
         public string NomComCliente { get; set; }
         public string Est_Codigo { get; set; }
-        
 
-        public Int16  CodTipoDocumento{ get; set; }
+
+        public Int16 CodTipoDocumento { get; set; }
         public Int16 CodSubTipo { get; set; }
         public Int16 CodTipoCliente { get; set; }
-        
+
         public string ApePatCliente { get; set; }
         public string ApeMatCliente { get; set; }
         public string DirCliente { get; set; }

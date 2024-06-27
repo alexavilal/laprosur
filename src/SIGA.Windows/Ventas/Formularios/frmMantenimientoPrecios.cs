@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SIGA.Business.Ventas;
+﻿using SIGA.Business.Ventas;
 using SIGA.Entities.Ventas;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace SIGA.Windows.Ventas.Formularios
 {
@@ -54,8 +48,8 @@ namespace SIGA.Windows.Ventas.Formularios
             List<PoliticaPrecio> lista = new List<PoliticaPrecio>();
 
             lista.Add(new PoliticaPrecio { CodPolitica = 0, DesPolitica = "--Seleccione--" });
-            
-  
+
+
             try
             {
                 var result = objPolitica.ObtenerPolitica(entPolitica);
@@ -90,7 +84,7 @@ namespace SIGA.Windows.Ventas.Formularios
 
             List<Zona> lista = new List<Zona>();
 
-            lista.Add(new Zona {  IdZona = 0, Descripcion = "--Seleccione--" });
+            lista.Add(new Zona { IdZona = 0, Descripcion = "--Seleccione--" });
 
             var result = objZona.ObtenerZonas(EntZona);
             foreach (var item in result)
@@ -104,8 +98,8 @@ namespace SIGA.Windows.Ventas.Formularios
 
         }
 
-        
-       
+
+
 
 
         private void CargaPrecio()
@@ -121,7 +115,7 @@ namespace SIGA.Windows.Ventas.Formularios
                 if (resultDetalle.Rows.Count > 0)
                 {
 
-                   
+
 
 
                     for (int i = 0; i < resultDetalle.Rows.Count; i++)
@@ -158,7 +152,7 @@ namespace SIGA.Windows.Ventas.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if  (Convert.ToInt32(cboPolitica.SelectedValue).Equals(0))
+            if (Convert.ToInt32(cboPolitica.SelectedValue).Equals(0))
             {
                 MessageBox.Show("Debe ingresar la politica..");
                 return;

@@ -1,13 +1,9 @@
-﻿using SIGA.Entities.Ventas;
+﻿using SIGA.DAO.Comunes;
+using SIGA.Entities.Ventas;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SIGA.DAO.Comunes;
-using SIGA.Entities.Administrador;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Ventas
 {

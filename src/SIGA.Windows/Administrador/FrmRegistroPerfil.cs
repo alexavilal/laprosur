@@ -1,13 +1,11 @@
-﻿using System;
+﻿using SIGA.Business.Administrador;
+using SIGA.Entities.Administrador;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using SIGA.Business.Administrador;
-using SIGA.Entities.Administrador;
 
 namespace SIGA.Windows.Administrador
 {
@@ -45,7 +43,7 @@ namespace SIGA.Windows.Administrador
 
             if (CodigoEdicion.Equals(0))
             {
-                cboEstado.Enabled = false;                
+                cboEstado.Enabled = false;
             }
             else
             {
@@ -53,7 +51,7 @@ namespace SIGA.Windows.Administrador
                 BuscarOpciones(CodigoEdicion, 0, "E");
                 ObtenerDatos();
             }
-            
+
             BuscarModulosTreeView();
         }
 
@@ -73,7 +71,7 @@ namespace SIGA.Windows.Administrador
                 objEntidad.UsuCreacion = 1;  // por definir, dato de prueba
 
                 ObtenerListaPerfilesCheck();
- 
+
                 Codigo = objDocumentoBussiness.RegistrarPerfil(objEntidad, ListaOpciones);
 
                 if (Codigo > 0)
@@ -109,7 +107,7 @@ namespace SIGA.Windows.Administrador
                 ObtenerListaPerfilesCheck();
                 OpcionPerfil objPerfilUsuario = new OpcionPerfil();
                 objPerfilUsuario.CodPerfil = Convert.ToInt16(TxtCodigo.Text);
-                 
+
                 Codigo = objDocumentoBussiness.ActualizarPerfil(objEntidad, ListaOpciones, objPerfilUsuario);
 
                 if (Codigo > 0)
@@ -156,7 +154,7 @@ namespace SIGA.Windows.Administrador
             cboEstado.DataSource = new BindingSource(data, null);
             cboEstado.DisplayMember = "Value";
             cboEstado.ValueMember = "Key";
-        }             
+        }
 
         void ObtenerListaPerfilesCheck()
         {
@@ -200,7 +198,7 @@ namespace SIGA.Windows.Administrador
                 }
             }
         }
-             
+
         public void ListarModulos()
         {
             ModuloBusiness objBusiness = new ModuloBusiness();
@@ -220,21 +218,21 @@ namespace SIGA.Windows.Administrador
             objOpcionPerfil.CodModulo = CodModulo;
 
             if (flag.Equals("N"))
-            {                
+            {
                 ListaOpcionesPerfilChk = objBusiness.ObtenerOpcionesPerfil(objOpcionPerfil);
             }
             else
-	        { 
+            {
                 ListaOpcionesPerfilEditChk = objBusiness.ObtenerOpcionesPerfil(objOpcionPerfil);
-	        }
-        }       
+            }
+        }
 
         public void BuscarModulosTreeView()
-        {  
+        {
             PerfilBusiness objBusinessPerfil = new PerfilBusiness();
-           
+
             TvPerfil.CheckBoxes = true;
-          
+
             TreeNode parentNode = null;
             TreeNode childNode = null;
 
@@ -244,10 +242,10 @@ namespace SIGA.Windows.Administrador
 
                 var opcionesPerfiles = ListaOpcionesPerfilChk.Where(x => x.CodModulo == item.CodigoModulo && x.CodPerfil == 0);
 
-                if (opcionesPerfiles==null) continue;
+                if (opcionesPerfiles == null) continue;
 
                 if (CodigoEdicion.Equals(0))
-                {                    
+                {
                     foreach (var opciones in opcionesPerfiles)
                     {
                         childNode = new TreeNode(opciones.DesOpcion.ToString());
@@ -267,15 +265,15 @@ namespace SIGA.Windows.Administrador
                         if (editOpcionesPerfil != null)
                         {
                             childNode.Checked = Convert.ToInt16(editOpcionesPerfil.CodOpcion) > 0 ? true : false;
-                        } 
+                        }
                         parentNode.Nodes.Add(childNode);
-                    } 
+                    }
                 }
 
-            }             
+            }
 
             TvPerfil.ExpandAll();
-        } 
-         
+        }
+
     }
 }

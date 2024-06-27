@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SIGA.Windows
 {
@@ -23,11 +20,11 @@ namespace SIGA.Windows
             UsuarioSession = string.Empty;
         }
 
-       
+
     }
 
     static class Variables
     {
-        public static Int32 TLS12{ get;set;}
+        public static Int32 TLS12 { get; set; }
     }
 }

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SIGA.Entities.Seguridad
 {
@@ -16,6 +13,6 @@ namespace SIGA.Entities.Seguridad
         public Int16 UsuModifica { get; set; }
 
 
- 
+
     }
 }

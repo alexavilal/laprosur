@@ -2,11 +2,8 @@
 using SIGA.Entities.Ventas;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Ventas
 {
@@ -110,7 +107,7 @@ namespace SIGA.DAO.Ventas
             return CotizacionResponse;
         }
 
-        public DataTable DevuelveCotizaciones(string FechaInicio , string FechaFin , string CodigoCliente , int CodigoVendedor)
+        public DataTable DevuelveCotizaciones(string FechaInicio, string FechaFin, string CodigoCliente, int CodigoVendedor)
         {
 
             DataTable dtCotizaciones = new DataTable();

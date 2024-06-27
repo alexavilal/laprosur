@@ -1,17 +1,14 @@
 ﻿using SIGA.DAO.Comunes;
 using SIGA.Entities.Administrador;
+using SIGA.Entities.Ventas;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SIGA.Entities.Ventas;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Ventas
 {
-    public  class ZonaDao
+    public class ZonaDao
     {
 
         private Conexion Conection = new Conexion();
@@ -64,17 +61,17 @@ namespace SIGA.DAO.Ventas
                         using (SqlCommand cmd = new SqlCommand("USP_ZonaInsertar", con))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
-                           
+
                             cmd.Parameters.Add("@DesZona", SqlDbType.VarChar).Value = objZona.Descripcion;
                             cmd.Parameters.Add("@UsuCre", SqlDbType.Int).Value = objZona.Usuario;
-                           
+
                             SqlParameter parm2 = new SqlParameter("@Resultado", SqlDbType.Int);
                             parm2.Size = 7;
                             parm2.Direction = ParameterDirection.Output;
                             cmd.Parameters.Add(parm2);
                             cmd.ExecuteNonQuery();
 
-                            
+
                         }
                     }
                 }
@@ -108,10 +105,10 @@ namespace SIGA.DAO.Ventas
                             cmd.Parameters.Add("@DesZona", SqlDbType.VarChar).Value = objModulo.DescripcionModulo;
                             cmd.Parameters.Add("@EstCodigo", SqlDbType.Char).Value = objModulo.EstadoModulo;
                             cmd.Parameters.Add("@UsuCre", SqlDbType.SmallInt).Value = objModulo.UsuModifica;
-                          
+
                             cmd.ExecuteNonQuery();
 
-                            
+
                         }
                     }
                 }

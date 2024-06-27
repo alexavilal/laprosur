@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SIGA.Entities.Logistica
 {
@@ -20,7 +17,7 @@ namespace SIGA.Entities.Logistica
         public Decimal Cantidad { get; set; }
         public Decimal Precio { get; set; }
         public Decimal Total { get; set; }
-        public string NumeroOrden { get; set; } 
-      
+        public string NumeroOrden { get; set; }
+
     }
 }

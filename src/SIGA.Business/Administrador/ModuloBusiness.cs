@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using SIGA.DAO.Administrador;
 using SIGA.Entities.Administrador;
-using SIGA.DAO.Administrador;
+using System.Collections.Generic;
 
 namespace SIGA.Business.Administrador
 {
-    public  class ModuloBusiness
+    public class ModuloBusiness
     {
 
         public int RegistrarModulo(Modulo objModulo)
@@ -23,7 +20,7 @@ namespace SIGA.Business.Administrador
             int Codigo = 0;
             ModuloDao _GeneralRepository = new ModuloDao();
             Codigo = _GeneralRepository.ActualizarModulo(objModulo);
-            return Codigo;        
+            return Codigo;
         }
 
         public List<Modulo> ObtenerModulos(Modulo objModulo)

@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using SIGA.Business.Logistica;
-using SIGA.Entities.Logistica;
+﻿using SIGA.Business.Logistica;
 using SIGA.Business.Ventas;
+using SIGA.Entities.Logistica;
 //using SIGA.Business.Seguridad;
 using SIGA.Entities.Ventas;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 //using SIGA.Entities.Seguridad;
-using SIGA.Business.Comunes;
-using SIGA.Comun;
 
 namespace SIGA.Windows.Ventas.Formularios
 {
@@ -82,7 +76,7 @@ namespace SIGA.Windows.Ventas.Formularios
             objEntidad.Est_Codigo = Convert.ToString(cboEstado.SelectedValue);
 
             dgvCliente.DataSource = objBusiness.ObtenerClientesRegistrados(objEntidad);
-         
+
 
 
 
@@ -281,7 +275,7 @@ namespace SIGA.Windows.Ventas.Formularios
             dgvCliente.Columns[9].HeaderText = "Placa";
             dgvCliente.Columns[9].DataPropertyName = "PlacaVehiculo";
             dgvCliente.Columns[9].Visible = false;
-            
+
 
             dgvCliente.Columns[10].Name = "Est_Codigo";
             dgvCliente.Columns[10].HeaderText = "Estado";

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SIGA.Entities.Ventas
 {
@@ -9,7 +6,7 @@ namespace SIGA.Entities.Ventas
     {
         public int CodigoGeneral { get; set; }
         public int CodPolitica { get; set; }
-      
+
         public int CodZona { get; set; }
 
         public int CodMoneda { get; set; }

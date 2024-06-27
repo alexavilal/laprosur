@@ -1,18 +1,13 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace Nissi.nFact
 {
     public class Sistema
     {
-        public class Operacion {
+        public class Operacion
+        {
             public const string generar_comprobante = "generar_comprobante";
             public const string consultar_comprobante = "consultar_comprobante";
             public const string generar_anulacion = "generar_anulacion";
@@ -23,7 +18,7 @@ namespace Nissi.nFact
 
         }
 
-      
+
 
         public static string SendJsonBusquedaRUC(string ruta, string json, string token, int VersionTLS)
         {
@@ -75,7 +70,7 @@ namespace Nissi.nFact
                 using (var client = new WebClient())
                 {
                     ///System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tl
-                    
+
                     if (VersionTLS.Equals(1))
                     {
                         System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;

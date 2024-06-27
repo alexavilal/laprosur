@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.DAO.Logistica;
+﻿using SIGA.DAO.Logistica;
 using SIGA.Entities.Logistica;
+using System;
+using System.Collections.Generic;
 using System.Data;
 namespace SIGA.Business.Logistica
 {
@@ -82,11 +80,11 @@ namespace SIGA.Business.Logistica
 
 
 
-        public DataTable BuscarPorCriteriosDT(string strRazonSocial, string strNombreComercial, Int16 TipoDocumento, string strNumeroDocumento,string Marca)
+        public DataTable BuscarPorCriteriosDT(string strRazonSocial, string strNombreComercial, Int16 TipoDocumento, string strNumeroDocumento, string Marca)
         {
 
             ProveedorDao _GeneralRepository = new ProveedorDao();
-            var result = _GeneralRepository.BuscarPorCriterioDT(strRazonSocial, strNombreComercial, TipoDocumento, strNumeroDocumento,Marca);
+            var result = _GeneralRepository.BuscarPorCriterioDT(strRazonSocial, strNombreComercial, TipoDocumento, strNumeroDocumento, Marca);
 
             return result;
         }

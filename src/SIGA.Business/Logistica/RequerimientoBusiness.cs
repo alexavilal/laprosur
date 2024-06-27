@@ -1,12 +1,6 @@
-﻿using SIGA.Entities.Ventas;
-using System;
+﻿using SIGA.Entities.Logistica;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SIGA.Entities.Logistica;
 using System.Data;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace SIGA.Business.Logistica
 {

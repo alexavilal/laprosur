@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.SqlClient;
-using System.Data.Common;
-using System.Data;
-using SIGA.DAO.Comunes;
+﻿using SIGA.DAO.Comunes;
 using SIGA.Entities.Administrador;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Seguridad
 {
@@ -37,7 +34,7 @@ namespace SIGA.DAO.Seguridad
                             ItemResult.CodigoModulo = Convert.ToInt16(dr.GetValue(0));
                             ItemResult.DescripcionModulo = Convert.ToString(dr.GetValue(1));
                             ItemResult.EstadoModulo = Convert.ToString(dr.GetValue(2));
-                            
+
                             listResult.Add(ItemResult);
                         }
                     }
@@ -102,7 +99,7 @@ namespace SIGA.DAO.Seguridad
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.Add("@CodModulo", SqlDbType.SmallInt).Value = objModulo.CodigoModulo;
                             cmd.Parameters.Add("@DesModulo", SqlDbType.VarChar).Value = objModulo.DescripcionModulo;
-                            cmd.Parameters.Add("@EstCodigo", SqlDbType.Char).Value = objModulo.EstadoModulo; 
+                            cmd.Parameters.Add("@EstCodigo", SqlDbType.Char).Value = objModulo.EstadoModulo;
                             cmd.Parameters.Add("@UsuMod", SqlDbType.SmallInt).Value = objModulo.UsuModifica;
                             SqlParameter parm2 = new SqlParameter("@Resultado", SqlDbType.Int);
                             parm2.Size = 7;
@@ -143,7 +140,7 @@ namespace SIGA.DAO.Seguridad
                         {
                             ItemResult.CodigoModulo = Convert.ToInt16(dr.GetValue(0));
                             ItemResult.DescripcionModulo = Convert.ToString(dr.GetValue(1));
-                            ItemResult.EstadoModulo = Convert.ToString(dr.GetValue(2));                           
+                            ItemResult.EstadoModulo = Convert.ToString(dr.GetValue(2));
                         }
                     }
                 }

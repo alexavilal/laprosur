@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using MaterialSkin;
-using MaterialSkin.Controls;
 
 namespace SIGA.Windows
 {
-    public partial class frmLogin :Form
+    public partial class frmLogin : Form
     {
         public frmLogin()
         {
@@ -28,15 +25,15 @@ namespace SIGA.Windows
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-           
-          
+            this.txtUsername.Text = "dbardales";
+            this.txtPassword.Text = "123456";
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
             SIGA.Business.Seguridad.UsuarioBusiness objUsuario = new SIGA.Business.Seguridad.UsuarioBusiness();
-           
+
             string Mensaje = string.Empty;
 
             try
@@ -55,7 +52,7 @@ namespace SIGA.Windows
                     if (result == true)
                     {
 
-                       
+
                         SIGA.Entities.Seguridad.Usuario objUsuarioEntidad = new SIGA.Entities.Seguridad.Usuario()
                         {
                             ApellidoPaterno = string.Empty,

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Newtonsoft.Json;
+using System;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net;
-using Newtonsoft.Json;
-
-using static Nissi.nFact.Entidades;
-using static System.Net.WebRequestMethods;
 
 
 namespace Nissi.nFact
@@ -39,7 +34,7 @@ namespace Nissi.nFact
 
                     result = await client.DownloadStringTaskAsync(url);
 
-                  
+
                 }
                 catch (Exception ex)
                 {

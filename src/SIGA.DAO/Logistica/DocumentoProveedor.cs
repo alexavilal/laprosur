@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.Entities.Logistica;
-using SIGA.Comun.Dto;
-using System.Data.SqlClient;
-using System.Data.Common;
-using System.Data;
-
+﻿using SIGA.Comun.Dto;
 using SIGA.DAO.Comunes;
+using SIGA.Entities.Logistica;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace SIGA.DAO.Logistica
 {
@@ -18,7 +14,7 @@ namespace SIGA.DAO.Logistica
         private Conexion Conection = new Conexion();
 
 
-        public int AnularDocumento(int CodigoDocumento,Int16 UsuarioModificacion)
+        public int AnularDocumento(int CodigoDocumento, Int16 UsuarioModificacion)
         {
             int DocumentoGenerado = 0;
 
@@ -28,18 +24,18 @@ namespace SIGA.DAO.Logistica
 
                 try
                 {
-                   
-                        using (SqlCommand cmd = new SqlCommand("USP_AnularDocumentoProveedor", con))
-                        {
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.Add("@CodDocumento ", SqlDbType.Int).Value = CodigoDocumento;
-                            cmd.Parameters.Add("@UsuCreCodigo", SqlDbType.Int).Value = UsuarioModificacion;
-                           
-                            cmd.ExecuteNonQuery();
 
-                            
-                        }
-                    
+                    using (SqlCommand cmd = new SqlCommand("USP_AnularDocumentoProveedor", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@CodDocumento ", SqlDbType.Int).Value = CodigoDocumento;
+                        cmd.Parameters.Add("@UsuCreCodigo", SqlDbType.Int).Value = UsuarioModificacion;
+
+                        cmd.ExecuteNonQuery();
+
+
+                    }
+
                 }
 
                 catch (Exception ex)
@@ -146,14 +142,14 @@ namespace SIGA.DAO.Logistica
                                         decimal PrecioConvertido = 0;
                                         decimal PrecioTotalConvertido = 0;
 
-                                        PrecioConvertido = Math.Round(item.Precio  * Documento.TipoCambio,2);
-                                        PrecioTotalConvertido = Math.Round(PrecioConvertido * item.Cantidad,2);
+                                        PrecioConvertido = Math.Round(item.Precio * Documento.TipoCambio, 2);
+                                        PrecioTotalConvertido = Math.Round(PrecioConvertido * item.Cantidad, 2);
 
                                         cmdDetalle.Parameters.Add("@PreEntKardex", SqlDbType.Decimal).Value = PrecioConvertido;
                                         cmdDetalle.Parameters.Add("@TotEntKardex ", SqlDbType.Decimal).Value = PrecioTotalConvertido;
                                     }
-                                    
-                                    
+
+
                                     cmdDetalle.Parameters.Add("@CanSalKardex", SqlDbType.Decimal).Value = 0;
                                     cmdDetalle.Parameters.Add("@PreSalKardex", SqlDbType.Decimal).Value = 0;
                                     cmdDetalle.Parameters.Add("@TotSalKardex ", SqlDbType.Decimal).Value = 0;
@@ -636,7 +632,7 @@ namespace SIGA.DAO.Logistica
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@CodDocumento", SqlDbType.Int).Value = CodigoDocumento;
-                  
+
                     con.Open();
                     listResult.Load(cmd.ExecuteReader());
 

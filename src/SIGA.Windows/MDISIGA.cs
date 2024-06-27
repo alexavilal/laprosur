@@ -1,14 +1,12 @@
-﻿using System;
-using System.Data;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
 using SIGA.Windows.Administrador;
 using SIGA.Windows.Logistica.Formularios;
 using SIGA.Windows.Logistica.Formularios.Busquedas.Mantenimientos;
 using SIGA.Windows.Ventas.Formularios;
-using MaterialSkin;
-using MaterialSkin.Controls;
-using System.Runtime.InteropServices;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 
 namespace SIGA.Windows
@@ -691,7 +689,7 @@ namespace SIGA.Windows
 
         private void clientesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -748,7 +746,7 @@ namespace SIGA.Windows
 
         private void clientesToolStripMenuItem_Click_2(object sender, EventArgs e)
         {
-           
+
         }
 
         private void mnuClientes_Click(object sender, EventArgs e)

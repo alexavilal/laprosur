@@ -1,12 +1,5 @@
 ﻿using SIGA.Business.Logistica;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SIGA.Windows.Comunes
@@ -27,7 +20,7 @@ namespace SIGA.Windows.Comunes
             string Descripcion = this.txtDescripcion.Text + "%";
             string str1 = string.Empty + "%";
             string str2 = this.txtCodigoGeneral.Text + "%";
-            this.dgvProducto.DataSource = (object)new GeneralBusiness().ConsultarMantenimiento(Convert.ToInt32(0), Convert.ToInt16(1), Convert.ToInt16(0), Convert.ToInt16(0), Convert.ToInt16(0), Convert.ToInt16(0), Convert.ToInt16(0), Convert.ToInt16(0), Convert.ToInt16(0), Convert.ToInt16(0), Convert.ToInt16(0), Descripcion, Convert.ToString("A"), Convert.ToInt16(0), "%" + this.txtCodigoGeneral.Text + "%","");
+            this.dgvProducto.DataSource = (object)new GeneralBusiness().ConsultarMantenimiento(Convert.ToInt32(0), Convert.ToInt16(1), Convert.ToInt16(0), Convert.ToInt16(0), Convert.ToInt16(0), Convert.ToInt16(0), Convert.ToInt16(0), Convert.ToInt16(0), Convert.ToInt16(0), Convert.ToInt16(0), Convert.ToInt16(0), Descripcion, Convert.ToString("A"), Convert.ToInt16(0), "%" + this.txtCodigoGeneral.Text + "%", "");
             this.dgvProducto.Columns[0].Visible = false;
             this.dgvProducto.Columns[1].Width = 80;
             this.dgvProducto.Columns[2].Width = 180;

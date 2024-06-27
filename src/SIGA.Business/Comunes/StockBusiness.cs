@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SIGA.DAO.Comunes;
-using SIGA.Entities.Ventas;
-
-namespace SIGA.Business.Comunes
+﻿namespace SIGA.Business.Comunes
 {
     public class StockBusiness
     {
@@ -16,8 +9,8 @@ namespace SIGA.Business.Comunes
         //    var lstResult = _StockRepository.BuscarStockPorSede(pCodigo);
         //    return lstResult;
         //}
-    
-    
-    
+
+
+
     }
 }
