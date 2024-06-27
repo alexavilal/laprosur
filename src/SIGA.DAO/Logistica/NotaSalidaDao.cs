@@ -1,6 +1,5 @@
 ﻿using SIGA.DAO.Comunes;
 using SIGA.Entities.Logistica;
-using SIGA.Entities.Ventas;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,11 +7,11 @@ using System.Data.SqlClient;
 
 namespace SIGA.DAO.Logistica
 {
-    public class OrdenCompraDao
+    public  class NotaSalidaDao
     {
         private Conexion Conection = new Conexion();
 
-        public DataTable Consultar(OrdenCompraRequest request)
+        public DataTable Consultar(NotaSalidaRequest request)
         {
 
             DataTable dtGuia = new DataTable();
@@ -22,7 +21,7 @@ namespace SIGA.DAO.Logistica
 
                 using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))
                 {
-                    using (SqlCommand cmd = new SqlCommand("USP_OrdenCompraConsultar", con))
+                    using (SqlCommand cmd = new SqlCommand("USP_NotaSalidaConsultar", con))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@FechaInicio", request.FechaInicio);
@@ -44,9 +43,9 @@ namespace SIGA.DAO.Logistica
 
         }
 
-        public OrdenCompra InsertarOrdenCompra(OrdenCompra OC, List<OrdenCompraDetalle> OCDetalle)
+        public NotaSalida InsertarNotaSalida(NotaSalida OC, List<NotaSalidaDetalle> OCDetalle)
         {
-            OrdenCompra OCResponse = new OrdenCompra();
+            NotaSalida OCResponse = new NotaSalida();
             using (SqlConnection con = new SqlConnection(Conection.cadenaConexion()))
             {
                 con.Open();
@@ -55,36 +54,33 @@ namespace SIGA.DAO.Logistica
                     try
                     {
 
-                        using (SqlCommand command = new SqlCommand("USP_InsertarOrdenCompra", con))
+                        using (SqlCommand command = new SqlCommand("USP_InsertarNotaSalida", con))
                         {
                             command.CommandType = CommandType.StoredProcedure;
 
                             // Agregar parámetros al procedimiento almacenado
-                            command.Parameters.AddWithValue("@OrdFechaEmision", OC.OrdFechaEmision);
-                            command.Parameters.AddWithValue("@OrdFechaEntrega", OC.OrdFechaEntrega);
+                            command.Parameters.AddWithValue("@CodAlmacen", OC.CodAlmacen);
+                            command.Parameters.AddWithValue("@NtsTransaccion", OC.NtsTransaccion);
+                            command.Parameters.AddWithValue("@NtsFechaEmision", OC.NtsFechaEmision);
+                            command.Parameters.AddWithValue("@NtsFechaDocumento", OC.NtsFechaDocumento);
                             command.Parameters.AddWithValue("@CodProveedor", OC.CodProveedor);
+                            command.Parameters.AddWithValue("@NtsCliente", OC.NtsCliente);
+                            command.Parameters.AddWithValue("@NtsNroDocReferencia", OC.NtsNroDocReferencia);
+                            command.Parameters.AddWithValue("@NtsAutorizado", OC.NtsAutorizado);
+                            command.Parameters.AddWithValue("@NtsCentroCosto", OC.NtsCentroCosto);
                             command.Parameters.AddWithValue("@CodMoneda", OC.CodMoneda);
-                            command.Parameters.AddWithValue("@OrdDireccion", OC.OrdDireccion);
-                            command.Parameters.AddWithValue("@OrdNroRuc", OC.OrdNroRuc);
-                            command.Parameters.AddWithValue("@OrdContacto", OC.OrdContacto);
-                            command.Parameters.AddWithValue("@OrdTelefono", OC.OrdTelefono);
-                            command.Parameters.AddWithValue("@CodFormaPago", OC.CodFormaPago);
-                            command.Parameters.AddWithValue("@OrdReferencia", OC.OrdReferencia);
-                            command.Parameters.AddWithValue("@OrdNroCuentaCorriente", OC.OrdNroCuentaCorriente);
-                            command.Parameters.AddWithValue("@OrdSolicitatoPor", OC.OrdSolicitatoPor);
-                            command.Parameters.AddWithValue("@OrdNroCotizacion", OC.OrdNroCotizacion);                            
-                            command.Parameters.AddWithValue("@OrdObservacion", OC.OrdObservacion);
-                            command.Parameters.AddWithValue("@OrdEstado", OC.OrdEstado);                            
+                            command.Parameters.AddWithValue("@NtsComentario", OC.NtsComentario);                            
+                            command.Parameters.AddWithValue("@NtsEstado", OC.NtsEstado);
                             command.Parameters.AddWithValue("@UsuCodigo", OC.UsuCodigo);
-                            command.Parameters.AddWithValue("@UsuCreCodigo", OC.UsuCreCodigo);                            
+                            command.Parameters.AddWithValue("@UsuCreCodigo", OC.UsuCreCodigo);
 
-                            SqlParameter parm2 = new SqlParameter("@OrdNumero", SqlDbType.VarChar);
+                            SqlParameter parm2 = new SqlParameter("@NtsNumero", SqlDbType.VarChar);
                             parm2.Size = 15;
                             parm2.Direction = ParameterDirection.Output;
                             command.Parameters.Add(parm2);
 
 
-                            SqlParameter parm3 = new SqlParameter("@OrdCodigo", SqlDbType.Int);
+                            SqlParameter parm3 = new SqlParameter("@NtsCodigo", SqlDbType.Int);
                             parm3.Size = 7;
                             parm3.Direction = ParameterDirection.Output;
                             command.Parameters.Add(parm3);
@@ -98,25 +94,26 @@ namespace SIGA.DAO.Logistica
                             if (rowsAffected > 0)
                             {
                                 // Si se insertaron filas, asignar valores de salida
-                                OCResponse.OrdNumero = Convert.ToString(command.Parameters["@OrdNumero"].Value);
+                                OCResponse.NtsNumero = Convert.ToString(command.Parameters["@NtsNumero"].Value);
                                 // Suponiendo que el procedimiento almacenado devuelve el código
-                                OCResponse.OrdCodigo = Convert.ToInt32(command.Parameters["@OrdCodigo"].Value);
+                                OCResponse.NtsCodigo = Convert.ToInt32(command.Parameters["@NtsCodigo"].Value);
                             }
 
                             foreach (var item in OCDetalle)
                             {
 
-                                using (SqlCommand cmdDetalle = new SqlCommand("USP_InsertarDetalleOrdenCompra", con))
+                                using (SqlCommand cmdDetalle = new SqlCommand("USP_InsertarDetalleNotaSalida", con))
                                 {
                                     cmdDetalle.CommandType = CommandType.StoredProcedure;
-                                    cmdDetalle.Parameters.AddWithValue("@OrdCodigo", OCResponse.OrdCodigo);
-                                    cmdDetalle.Parameters.AddWithValue("@OrdItem", item.OrdItem);
-                                    cmdDetalle.Parameters.AddWithValue("@OrdCodigoGeneral", item.OrdCodigoGeneral);
+                                    cmdDetalle.Parameters.AddWithValue("@NtsCodigo", OCResponse.NtsCodigo);
+                                    cmdDetalle.Parameters.AddWithValue("@NtsItem", item.NtsItem);
+                                    cmdDetalle.Parameters.AddWithValue("@CodigoGeneral", item.CodigoGeneral);
                                     cmdDetalle.Parameters.AddWithValue("@CodUnidadMedida", item.CodUnidadMedida);
-                                    cmdDetalle.Parameters.AddWithValue("@OrdDescripcion", item.OrdDescripcion);
+                                    cmdDetalle.Parameters.AddWithValue("@NtsDescripcion", item.NtsDescripcion);
+                                    cmdDetalle.Parameters.AddWithValue("@NtsOrdFabricacion", item.NtsOrdFabricacion);
                                     cmdDetalle.Parameters.AddWithValue("@Cantidad", item.Cantidad);
-                                    cmdDetalle.Parameters.AddWithValue("@Precio", item.Precio);                                    
-                                    cmdDetalle.Parameters.AddWithValue("@Total", item.Total);                                    
+                                    cmdDetalle.Parameters.AddWithValue("@Precio", item.Precio);
+                                    cmdDetalle.Parameters.AddWithValue("@Total", item.Total);
                                     cmdDetalle.Parameters.AddWithValue("@UsuCreCodigo", OCResponse.UsuCreCodigo);
                                     cmdDetalle.Transaction = tran as SqlTransaction;
                                     cmdDetalle.ExecuteNonQuery();

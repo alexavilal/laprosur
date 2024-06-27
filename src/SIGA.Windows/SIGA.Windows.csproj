@@ -253,6 +253,12 @@
     <Compile Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroSede.designer.cs">
       <DependentUpon>frmRegistroSede.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logistica\Formularios\frmMantenimientoNotaSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmMantenimientoNotaSalida.Designer.cs">
+      <DependentUpon>frmMantenimientoNotaSalida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logistica\Formularios\frmMantenimientoOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +276,12 @@
     </Compile>
     <Compile Include="Logistica\Formularios\frmMantenimientoRequerimiento.Designer.cs">
       <DependentUpon>frmMantenimientoRequerimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmRegistroNS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\Formularios\frmRegistroNS.Designer.cs">
+      <DependentUpon>frmRegistroNS.cs</DependentUpon>
     </Compile>
     <Compile Include="Logistica\Formularios\frmRegistroOC.cs">
       <SubType>Form</SubType>
@@ -448,6 +460,9 @@
     <EmbeddedResource Include="Logistica\Formularios\Busquedas\Mantenimientos\frmRegistroSede.resx">
       <DependentUpon>frmRegistroSede.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\frmMantenimientoNotaSalida.resx">
+      <DependentUpon>frmMantenimientoNotaSalida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logistica\Formularios\frmMantenimientoOrdenCompra.resx">
       <DependentUpon>frmMantenimientoOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -456,6 +471,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\Formularios\frmMantenimientoRequerimiento.resx">
       <DependentUpon>frmMantenimientoRequerimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\Formularios\frmRegistroNS.resx">
+      <DependentUpon>frmRegistroNS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\Formularios\frmRegistroOC.resx">
       <DependentUpon>frmRegistroOC.cs</DependentUpon>

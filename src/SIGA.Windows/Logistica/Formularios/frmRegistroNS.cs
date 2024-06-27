@@ -1,7 +1,5 @@
 ﻿using SIGA.Business.Logistica;
-using SIGA.Business.Ventas;
 using SIGA.Entities.Logistica;
-using SIGA.Entities.Ventas;
 using SIGA.Windows.Ventas.Formularios;
 using System;
 using System.Collections.Generic;
@@ -10,40 +8,41 @@ using System.Windows.Forms;
 
 namespace SIGA.Windows.Logistica.Formularios
 {
-    public partial class frmRegistroOC : Form
+    public partial class frmRegistroNS : Form
     {
         public int CodigoOC { get; set; }
         public int CodigoProveedor { get; set; }
-        public frmRegistroOC()
+        public frmRegistroNS()
         {
             InitializeComponent();
-        }        
-
-        private void CargarFormaPago()
-        {
-            FormaPagoBusiness objFormaPagoBusiness = new FormaPagoBusiness();
-            FormaPago formaPago = new FormaPago()
-            {
-                DesFormaPago = "",
-                EstCodigo = ""
-            };
-
-            try
-            {
-                var result = objFormaPagoBusiness.ObtenerListaPago(formaPago);
-                cboFormaPago.DataSource = result;
-                cboFormaPago.ValueMember = "CodFormaPago";
-                cboFormaPago.DisplayMember = "DesFormaPago";
-
-            }
-            catch (Exception ex)
-            {
-
-            }
         }
-        private void frmRegistroOC_Load(object sender, EventArgs e)
+
+        private void CargaAlmacenIngreso(Int16 CodigoSede)
         {
-            CargarFormaPago();
+            cboAlmacen.DataSource = null;
+
+            AlmacenBusiness objAlmacenBusiness = new AlmacenBusiness();
+            List<Almacen> Lista = new List<Almacen>();
+            Lista.Add(new Almacen { CodAlmacen = 0, DesAlmacen = "Seleccione" });
+
+            var resutlMarca = objAlmacenBusiness.ListarPorSede(CodigoSede);
+
+            foreach (var item in resutlMarca)
+            {
+                Lista.Add(item);
+            }
+
+
+
+            cboAlmacen.DataSource = Lista;
+            cboAlmacen.ValueMember = "CodAlmacen";
+            cboAlmacen.DisplayMember = "DesAlmacen";
+        }
+
+        private void frmRegistroNS_Load(object sender, EventArgs e)
+        {
+            CargaAlmacenIngreso(1);
+            cboMoneda.Text = "Soles";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,7 +51,7 @@ namespace SIGA.Windows.Logistica.Formularios
             objfrmProveedorBuscar.ShowDialog();
             CodigoProveedor = Convert.ToInt32(objfrmProveedorBuscar.CodigoProveedor);
             txtRazonSocial.Text = objfrmProveedorBuscar.NombreProveedor;
-            txtDireccion.Text = objfrmProveedorBuscar.Direccion;
+            //txtCliente.Text = objfrmProveedorBuscar.Direccion;
         }
         
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -65,12 +64,13 @@ namespace SIGA.Windows.Logistica.Formularios
         {
             dgvItems.ClearSelection();
 
-            dgvItems.Rows.Insert(dgvItems.Rows.Count, 0, "", "", "", "", Convert.ToDecimal(0), Convert.ToDecimal(0));
+            dgvItems.Rows.Insert(dgvItems.Rows.Count, 0, "", "", "", "", "", Convert.ToDecimal(0), Convert.ToDecimal(0));
             dgvItems.Focus();
             dgvItems.CurrentCell = dgvItems.Rows[dgvItems.Rows.Count - 1].Cells[2];
 
 
-            dgvItems.Rows[dgvItems.Rows.Count - 1].Cells[2].Selected = true;
+            //dgvItems.Rows[dgvItems.Rows.Count - 1].Cells[2].Selected = true;
+            dgvItems.Rows[dgvItems.Rows.Count - 1].Cells[1].Selected = true;
             dgvItems.BeginEdit(true);
         }
 
@@ -97,7 +97,7 @@ namespace SIGA.Windows.Logistica.Formularios
 
                 foreach (DataGridViewRow row in this.dgvItems.Rows)
                 {
-                    Total += Convert.ToDecimal(row.Cells[6].Value);
+                    Total += Convert.ToDecimal(row.Cells[7].Value);
                 }
 
 
@@ -115,6 +115,7 @@ namespace SIGA.Windows.Logistica.Formularios
             return objImporte;
 
         }
+
         private void Importes()
         {
             Decimal Neto = Convert.ToDecimal(0.0);
@@ -147,17 +148,17 @@ namespace SIGA.Windows.Logistica.Formularios
 
             try
             {
-                if ((e.ColumnIndex == 1) || (e.ColumnIndex == 5) || (e.ColumnIndex == 6))
+                if ((e.ColumnIndex == 1) || (e.ColumnIndex == 6) || (e.ColumnIndex == 7))
                 {
 
                     if (dgvItems.CurrentRow != null)
                     {
                         cantidad = Convert.ToDecimal(dgvItems[1, dgvItems.CurrentRow.Index].Value);
-                        precio = Convert.ToDecimal(dgvItems[5, dgvItems.CurrentRow.Index].Value);
+                        precio = Convert.ToDecimal(dgvItems[6, dgvItems.CurrentRow.Index].Value);
                         total = precio * cantidad;
                         //dgvItems[6, dgvItems.CurrentRow.Index].Value = Total.ToString();
 
-                        dgvItems[6, dgvItems.CurrentRow.Index].Value = total.ToString();
+                        dgvItems[7, dgvItems.CurrentRow.Index].Value = total.ToString();
 
 
                     }
@@ -189,8 +190,9 @@ namespace SIGA.Windows.Logistica.Formularios
                     this.dgvItems[2, this.dgvItems.CurrentRow.Index].Value = obj.CodigoExterno.ToString();
                     this.dgvItems[3, this.dgvItems.CurrentRow.Index].Value = obj.Descripcion.ToString();
                     this.dgvItems[4, this.dgvItems.CurrentRow.Index].Value = "MILLAR";
-                    this.dgvItems[5, this.dgvItems.CurrentRow.Index].Value = 0;
-                    this.dgvItems[6, this.dgvItems.CurrentRow.Index].Value = Convert.ToDecimal(this.dgvItems[5, this.dgvItems.CurrentRow.Index].Value) * Convert.ToDecimal(this.dgvItems[1, this.dgvItems.CurrentRow.Index].Value);
+                    this.dgvItems[5, this.dgvItems.CurrentRow.Index].Value = "Nts. 41100";
+                    this.dgvItems[6, this.dgvItems.CurrentRow.Index].Value = 0;
+                    this.dgvItems[7, this.dgvItems.CurrentRow.Index].Value = Convert.ToDecimal(this.dgvItems[5, this.dgvItems.CurrentRow.Index].Value) * Convert.ToDecimal(this.dgvItems[1, this.dgvItems.CurrentRow.Index].Value);
                     this.dgvItems.CurrentCell = dgvItems[1, this.dgvItems.CurrentRow.Index];
                 }
             }
@@ -214,26 +216,27 @@ namespace SIGA.Windows.Logistica.Formularios
             }
             else
             {
-                MessageBox.Show("Debe ingresar un item para registrar la orden de compra..!");
+                MessageBox.Show("Debe ingresar un item para registrar la nota de salida..!");
                 return;
             }
         }
 
-        public List<OrdenCompraDetalle> Lista()
+        public List<NotaSalidaDetalle> Lista()
         {
-            List<OrdenCompraDetalle> ListaDocumento = new List<OrdenCompraDetalle>();
+            List<NotaSalidaDetalle> ListaDocumento = new List<NotaSalidaDetalle>();
 
             foreach (DataGridViewRow row in this.dgvItems.Rows)
             {                
-                OrdenCompraDetalle Item = new OrdenCompraDetalle();
+                NotaSalidaDetalle Item = new NotaSalidaDetalle();
 
-                Item.OrdItem = row.Index + 1;
-                Item.OrdCodigoGeneral = Convert.ToInt32(row.Cells[0].Value);
+                Item.NtsItem = row.Index + 1;
+                Item.CodigoGeneral = Convert.ToInt32(row.Cells[0].Value);
                 Item.Cantidad = Convert.ToInt32(row.Cells[1].Value);
                 Item.CodUnidadMedida = 2;                
-                Item.OrdDescripcion = Convert.ToString(row.Cells[3].Value);                
-                Item.Precio = Convert.ToDecimal(row.Cells[5].Value);
-                Item.Total = Convert.ToDecimal(row.Cells[6].Value);
+                Item.NtsDescripcion = Convert.ToString(row.Cells[3].Value);
+                Item.NtsOrdFabricacion = Convert.ToString(row.Cells[5].Value);
+                Item.Precio = Convert.ToDecimal(row.Cells[6].Value);
+                Item.Total = Convert.ToDecimal(row.Cells[7].Value);
                 ListaDocumento.Add(Item);
             }
 
@@ -242,38 +245,34 @@ namespace SIGA.Windows.Logistica.Formularios
 
         private void Guardar()
         {
-            OrdenCompraBusiness ordenCompraBusiness = new OrdenCompraBusiness();
-            OrdenCompra entOC = new OrdenCompra();
+            NotaSalidaBusiness NotaSalidaBusiness = new NotaSalidaBusiness();
+            NotaSalida entNS = new NotaSalida();
 
             try
             {
-
-                entOC.OrdFechaEmision = dtFechaEmision.Value;
-                entOC.OrdFechaEntrega = dtFechaEntrega.Value;
-                entOC.CodProveedor = CodigoProveedor;
-                entOC.CodMoneda = 1;
-                entOC.OrdDireccion = txtDireccion.Text;
-                entOC.OrdNroRuc = string.Empty;
-                entOC.OrdContacto = string.Empty;
-                entOC.OrdTelefono = string.Empty;
-                entOC.CodFormaPago = Convert.ToInt32(cboFormaPago.SelectedValue);
-                entOC.OrdReferencia = txtReferencia.Text;
-                entOC.OrdNroCuentaCorriente = txtCTACTE.Text;
-                entOC.OrdSolicitatoPor = txtSolicitado.Text;
-                entOC.OrdNroCotizacion = txtCotNro.Text;
-                entOC.OrdObservacion = txtObservacion.Text;
-                entOC.OrdEstado = 1;                
-                entOC.UsuCodigo = UsuarioLogeo.Codigo;
-                entOC.UsuCreCodigo = UsuarioLogeo.Codigo;
+                entNS.CodAlmacen = Convert.ToInt16(cboAlmacen.SelectedValue);
+                entNS.NtsTransaccion = txtTransaccion.Text;
+                entNS.NtsFechaEmision = dtFechaEmision.Value;
+                entNS.NtsFechaDocumento = dtFechaDocumento.Value;
+                entNS.CodProveedor = CodigoProveedor;                
+                entNS.NtsCliente = txtCliente.Text;
+                entNS.NtsNroDocReferencia = txtNroDocRef.Text;
+                entNS.NtsAutorizado = txtAutorizado.Text;
+                entNS.NtsCentroCosto = txtCentroCosto.Text;
+                entNS.CodMoneda = 1;
+                entNS.NtsComentario = txtComentario.Text;                
+                entNS.NtsEstado = 1;                
+                entNS.UsuCodigo = UsuarioLogeo.Codigo;
+                entNS.UsuCreCodigo = UsuarioLogeo.Codigo;
                 
                 var resultDetalle = Lista();
 
-                var result = ordenCompraBusiness.InsertarOC(entOC, resultDetalle);
+                var result = NotaSalidaBusiness.InsertarNS(entNS, resultDetalle);
 
                 if (result != null)
                 {
-                    CodigoOC = Convert.ToInt32(result.OrdNumero);
-                    MessageBox.Show("Se ha generado la orden de compra " + result.OrdNumero);
+                    CodigoOC = Convert.ToInt32(result.NtsNumero);
+                    MessageBox.Show("Se ha generado la nota de salida " + result.NtsNumero);
                     btnGuardar.Enabled = false;
                     btnImprimir.Enabled = true;
                     btnSalir.Enabled = true;
@@ -284,5 +283,12 @@ namespace SIGA.Windows.Logistica.Formularios
                 throw ex;
             }
         }
+    }
+
+    public class ImportesDocumento
+    {
+        public decimal TotalDocumento { get; set; }
+        public decimal Afecto { get; set; }
+        public decimal Inafecto { get; set; }
     }
 }

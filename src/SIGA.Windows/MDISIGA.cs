@@ -841,7 +841,7 @@ namespace SIGA.Windows
 
         private void ordenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SIGA.Windows.Logistica.Formularios.frmMantenimientoOrdenCompra obj = new SIGA.Windows.Logistica.Formularios.frmMantenimientoOrdenCompra();
+            frmMantenimientoOrdenCompra obj = new frmMantenimientoOrdenCompra();
             obj.MdiParent = this;
             obj.Show();
 
@@ -853,6 +853,13 @@ namespace SIGA.Windows
             obj.MdiParent = this;
             obj.Show();
 
+        }
+
+        private void salidaAAlmacenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMantenimientoNotaSalida obj = new frmMantenimientoNotaSalida();
+            obj.MdiParent = this;
+            obj.Show();
         }
     }
 

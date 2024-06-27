@@ -295,7 +295,8 @@
             // 
             this.sallidaAAlmacenToolStripMenuItem.Name = "sallidaAAlmacenToolStripMenuItem";
             this.sallidaAAlmacenToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
-            this.sallidaAAlmacenToolStripMenuItem.Text = "Sallida a Almacen";
+            this.sallidaAAlmacenToolStripMenuItem.Text = "Salida a Almacen";
+            this.sallidaAAlmacenToolStripMenuItem.Click += new System.EventHandler(this.salidaAAlmacenToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem1
             // 

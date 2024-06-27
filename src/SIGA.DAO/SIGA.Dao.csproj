@@ -80,6 +80,7 @@
     <Compile Include="Logistica\FamiliaDao.cs" />
     <Compile Include="Logistica\GeneralDao.cs" />
     <Compile Include="Logistica\MarcaDao.cs" />
+    <Compile Include="Logistica\NotaSalidaDao.cs" />
     <Compile Include="Logistica\OperadorDao.cs" />
     <Compile Include="Logistica\OrdenCompraDao.cs" />
     <Compile Include="Logistica\ProveedorDao.cs" />

@@ -5,16 +5,16 @@ using System.Windows.Forms;
 
 namespace SIGA.Windows.Logistica.Formularios
 {
-    public partial class frmMantenimientoOrdenCompra : Form
+    public partial class frmMantenimientoNotaSalida : Form
     {
-        public frmMantenimientoOrdenCompra()
+        public frmMantenimientoNotaSalida()
         {
             InitializeComponent();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmRegistroOC obj = new frmRegistroOC();
+            frmRegistroNS obj = new frmRegistroNS();
             obj.ShowDialog();
         }
 
@@ -27,14 +27,14 @@ namespace SIGA.Windows.Logistica.Formularios
         {
             try
             {
-                OrdenCompraBusiness ordenCompraBusiness = new OrdenCompraBusiness();
-                OrdenCompraRequest ordenCompraRequest = new OrdenCompraRequest();
+                NotaSalidaBusiness NotaSalidaBusiness = new NotaSalidaBusiness();
+                NotaSalidaRequest NotaSalidaRequest = new NotaSalidaRequest();
 
-                ordenCompraRequest.FechaInicio = dtInicio.Value.ToString("yyyyMMdd");
-                ordenCompraRequest.FechaFin = dtFin.Value.ToString("yyyyMMdd");
-                ordenCompraRequest.CodProveedor = txtCodigoProveedor.Text == string.Empty ? 0 : Convert.ToInt32(txtCodigoProveedor.Text);
+                NotaSalidaRequest.FechaInicio = dtInicio.Value.ToString("yyyyMMdd");
+                NotaSalidaRequest.FechaFin = dtFin.Value.ToString("yyyyMMdd");
+                NotaSalidaRequest.CodProveedor = txtCodigoProveedor.Text == string.Empty ? 0 : Convert.ToInt32(txtCodigoProveedor.Text);
 
-                var result = ordenCompraBusiness.Consultar(ordenCompraRequest);
+                var result = NotaSalidaBusiness.Consultar(NotaSalidaRequest);
                 dgvOC.DataSource = result;
 
                 dgvOC.Columns[0].Width = 100;

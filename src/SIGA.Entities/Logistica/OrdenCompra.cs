@@ -32,23 +32,7 @@ namespace SIGA.Entities.Logistica
     {
         public string FechaInicio { get; set; }
         public string FechaFin { get; set; }
-    }
-
-    public class OrdenCompraResponse: OrdenCompra
-    {
-        public decimal Total { get; set; }
-        public string DesMoneda { get; set; }
-        public string DesProveedor { get; set; }
-
-        public string OrdFechaEmisionFormato
-        {
-            get
-            {
-                return OrdFechaEmision.ToString("dd/MM/yyyy");
-            }
-        }
-
-    }
+    }    
 }
 
 

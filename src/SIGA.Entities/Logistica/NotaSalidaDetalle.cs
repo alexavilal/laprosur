@@ -2,14 +2,15 @@
 
 namespace SIGA.Entities.Logistica
 {
-    public class OrdenCompraDetalle
+    public  class NotaSalidaDetalle
     {
-        public int OrdCodigo { get; set; }
-        public int OrdItem { get; set; }
-        public int OrdCodigoGeneral { get; set; }
-        public decimal Cantidad { get; set; }
+        public int NtsCodigo { get; set; }
+        public int NtsItem { get; set; }
+        public int CodigoGeneral { get; set; }        
         public int CodUnidadMedida { get; set; }
-        public string OrdDescripcion { get; set; }
+        public string NtsDescripcion { get; set; }
+        public string NtsOrdFabricacion { get; set; }
+        public decimal Cantidad { get; set; }        
         public decimal Precio { get; set; }
         public decimal Total { get; set; }
         public DateTime FecCre { get; set; }

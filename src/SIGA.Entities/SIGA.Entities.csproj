@@ -64,6 +64,8 @@
     <Compile Include="Logistica\Familia.cs" />
     <Compile Include="Logistica\General.cs" />
     <Compile Include="Logistica\Marca.cs" />
+    <Compile Include="Logistica\NotaSalida.cs" />
+    <Compile Include="Logistica\NotaSalidaDetalle.cs" />
     <Compile Include="Logistica\Operador.cs" />
     <Compile Include="Logistica\OrdenCompra.cs" />
     <Compile Include="Logistica\OrdenCompraDetalle.cs" />

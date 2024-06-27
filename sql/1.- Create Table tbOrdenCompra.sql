@@ -1,7 +1,6 @@
 USE [dbLaprosur]
 GO
 
-/****** Object:  Table [dbo].[tbGuia]    Script Date: 24/06/2024 21:24:37 ******/
 SET ANSI_NULLS ON
 GO
 
